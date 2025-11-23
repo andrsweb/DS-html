@@ -4,6 +4,7 @@ import fg from 'fast-glob';
 
 const rootDir = 'dev/src';
 const outputFile = path.join(rootDir, 'scss', 'generated', '_html-modules.scss');
+const outputDir = path.dirname(outputFile);
 
 export async function stylesIndex() {
 	const files = await fg([
@@ -14,9 +15,9 @@ export async function stylesIndex() {
 	const forwards = files
 		.filter((file) => !path.basename(file).startsWith('_'))
 		.map((file) => {
-			const relative = path.relative(rootDir, file).replace(/\\/g, '/');
+			const relative = path.relative(outputDir, file).replace(/\\/g, '/');
 			const withoutExt = relative.replace(/\.scss$/, '');
-			return `@forward '@/${withoutExt}';`;
+			return `@forward '${withoutExt}';`;
 		})
 		.sort();
 
