@@ -30,11 +30,11 @@ input {
 }
 
 textarea {
-	@include g.focus-visible(v.$c-accent, 4px, 2px);
+	@include g.focus-visible(v.$c-accent, 0, 4px);
 }
 
 button, a, select {
-	@include g.focus-visible(v.$c-accent, 4px, 2px);
+	@include g.focus-visible(v.$c-accent, 0, 4px);
 }
 
 
