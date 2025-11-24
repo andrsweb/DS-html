@@ -19,17 +19,32 @@ body {
 	height: auto;
 	font-family: v.$ff;
 	font-size: v.$fs-md;
-	line-height: v.$lh;
+	line-height: v.$lh150;
 	color: v.$c-black;
 	background-color: v.$c-white;
 }
+
+button, a, textarea, select {
+	&:focus-visible {
+		outline: 2px solid v.$c-accent;
+		outline-offset: 4px;
+		border-radius: 2px;
+	}
+}
+
+input {
+	&:focus-visible {
+		outline: 1px solid v.$c-gray;
+	}
+}
+
 
 img {
 	max-width: 100%;
 	height: auto
 }
 
-form, fieldset {
+form, fieldset, input, textarea {
 	padding: 0;
 	margin: 0;
 	border: 0;
@@ -39,6 +54,17 @@ ul {
 	margin: 0;
 	padding: 0;
 	list-style: none
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
 }
 
 .wrapper {

@@ -9,11 +9,7 @@ h4, .h4, h5, .h5, h6, .h6 {
 a {
 	display: inline-block;
 	text-decoration: none;
-	transition: opacity ease v.$tr;
-
-	&:hover {
-		opacity: v.$op;
-	}
+	transition: opacity ease v.$tr, color ease-in-out v.$tr;
 }
 
 p {

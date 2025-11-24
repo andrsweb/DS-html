@@ -12,7 +12,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <meta name="apple-mobile-web-app-title" content="Romanov">
+    <meta name="apple-mobile-web-app-title" content="Dutch Seeds">
     <link rel="manifest" href="/site.webmanifest">
     <!--  -->
 </head>
@@ -20,5 +20,84 @@
 <body>
 <div class="wrapper">
     <header class="header">
-        <div class="header-wrapper"></div>
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="header-top">
+                    <a href="/" class="header-logo">
+                        <img src="/img/logo.png" width="101" height="50" alt="Логотип Dutch Seeds">
+                    </a>
+                    <div class="header-inner">
+                        <form class="header-search">
+                            <label for="search-input" class="sr-only">Поиск</label>
+                            <input id="search-input" type="search" name="s" placeholder="Я ищу...">
+                            <button type="button">
+                                <img src="/img/search.svg" width="28" height="28" alt="">
+                            </button>
+                        </form>
+
+                        <div class="header-actions">
+                            <button class="header-action">
+                                <img src="/img/filter.svg" width="24" height="24" alt="Векторная иконка">
+                            </button>
+                            <button class="header-action color">
+                                <img src="/img/shopping-cart.svg" width="24" height="24" alt="Векторная иконка">
+                            </button>
+                            <button class="header-action" id="lang">
+                                <span>EN</span>
+                            </button>
+                        </div>
+                        <button class="header-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-nav">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <nav class="header-nav" id="header-nav">
+                        <ul class="menu">
+                            <li class="menu-item">
+                                <a class="active" href="#">Категории</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Сидбанки</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Акции и бонусы</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#">Доставка и оплата</a>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">
+                                    Ссылка
+                                </a>
+
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="#">Подпункт 1</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">Подпункт 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-item menu-item-has-children">
+                                <a href="#">Ссылка</a>
+
+                                <ul class="sub-menu">
+                                    <li class="menu-item">
+                                        <a href="#">Подпункт 1</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="#">Подпункт 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
     </header>
