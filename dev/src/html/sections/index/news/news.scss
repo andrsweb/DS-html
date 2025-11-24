@@ -31,6 +31,10 @@
 		align-items: center;
 		justify-content: center;
 		gap: 32px;
+
+		@media (min-width: v.$md) {
+			justify-content: flex-start;
+		}
 	}
 
 	&-item {

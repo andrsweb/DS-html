@@ -1,0 +1,102 @@
+@use '../../../../scss/vars/vars' as v;
+@use '../../../../scss/mixins/global' as g;
+
+.catalog {
+	padding: 60px 0;
+
+	&-top {
+		width: 100%;
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 16px;
+
+		&-title {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 30px;
+
+			h3 {
+				font-family: v.$ff;
+				font-weight: v.$fw-500;
+				font-size: 28px;
+				line-height: 32px;
+
+				@media(min-width: v.$md) {
+					font-size: 36px;
+					line-height: 44px;
+				}
+			}
+
+			p {
+				font-family: v.$ff;
+				font-weight: v.$fw-300;
+				font-size: 14px;
+				color: v.$c-gray;
+
+				@media(min-width: v.$md) {
+					font-size: 16px;
+				}
+			}
+		}
+
+		a {
+			font-family: v.$ff;
+			font-weight: v.$fw-500;
+			line-height: v.$lh150;
+			font-size: 14px;
+			color: v.$c-gray;
+			text-decoration: underline;
+
+			@media(min-width: v.$md) {
+				font-size: 16px;
+			}
+
+			@include g.hover {
+				opacity: v.$op;
+				text-decoration: none;
+			}
+		}
+	}
+
+	&-wrapper {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+
+		@media(min-width: v.$md) {
+			gap: 30px;
+		}
+	}
+
+	&-items {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		gap: 20px;
+
+		@media(min-width: v.$md) {
+			gap: 33px;
+		}
+
+		.card {
+			width: 100%;
+
+			@media(min-width: v.$sm) {
+				width: calc(100% / 2 - 10px);
+			}
+
+			@media(min-width: v.$md) {
+				width: calc(100% / 2 - 17px);
+			}
+
+			@media(min-width: v.$lg) {
+				width: calc(100% / 4 - 25px);
+			}
+		}
+	}
+}

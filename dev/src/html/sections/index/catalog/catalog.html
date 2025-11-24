@@ -1,0 +1,25 @@
+<section class="catalog">
+    <h2 class="sr-only">Скрытый сео заголовок</h2>
+    <div class="container">
+        <div class="catalog-wrapper">
+            <div class="catalog-top">
+                <div class="catalog-top-title">
+                    <h3>
+                        Новости
+                    </h3>
+                    <p>Наиболее популярные</p>
+                </div>
+                <a href="#">
+                    Смотреть все
+                </a>
+            </div>
+
+            <div class="catalog-items">
+                @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                @@include('components/card/card.html', {"src": "/img/c2.jpg"})
+                @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+            </div>
+        </div>
+    </div>
+</section>
