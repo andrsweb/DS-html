@@ -313,6 +313,10 @@
 			z-index: 1;
 
 			@include bg.button-bg;
+
+			&::after {
+				opacity: 1;
+			}
 		}
 
 		@include g.hover {

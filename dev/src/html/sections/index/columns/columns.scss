@@ -55,16 +55,25 @@
 	}
 
 	&-buttons {
-		width: 100%;
+		width: 100vw;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-		gap: 16px;
+		gap: 12px;
+		padding: 0 20px;
+		margin-left: calc(50% - 50vw);
 
 		@include g.hide-x-scrollbar;
 
+		@media(min-width: v.$md) {
+			gap: 16px;
+		}
+
 		@media(min-width: v.$xl) {
+			width: 100%;
 			flex-wrap: wrap;
+			margin-left: 0;
+			padding: 0;
 		}
 
 		button {

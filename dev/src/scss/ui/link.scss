@@ -1,8 +1,9 @@
 @use '../vars/vars' as v;
 @use '../../scss/ui/bg' as bg;
+@use '../../scss/mixins/global' as g;
 @use '../utils/placeholders/buttons/button' as *;
 
-.button, button {
+.link {
 	@extend %button;
 
 	border-radius: v.$br4;
@@ -13,7 +14,7 @@
 		font-weight: v.$fw-400;
 		font-size: 14px;
 		border-color: v.$c-light;
-		padding: 8px 12px;
+		padding: 6px 12px;
 		color: v.$c-black;
 		position: relative;
 
@@ -21,14 +22,13 @@
 
 		@media(min-width: v.$md) {
 			font-size: 16px;
-			padding: 14px 16px;
+			padding: 12px 16px;
 		}
 
-		&.active {
-			z-index: 1;
+		@include g.hover {
 			color: v.$c-white;
 
-			&:after {
+			&::after {
 				opacity: 1;
 			}
 		}
