@@ -1,4 +1,5 @@
 //libs
+@forward "../../../node_modules/swiper/swiper-bundle.min.css";
 
 // Defaults styles.
 @forward 'common/fonts';
@@ -11,6 +12,7 @@
 @forward 'ui/button';
 @forward 'ui/link';
 @forward 'ui/modal';
+@forward 'ui/swiper';
 
 //generated
 @forward 'generated/html-modules';

@@ -2,27 +2,32 @@
 @use '../../scss/ui/bg' as bg;
 @use '../utils/placeholders/buttons/button' as *;
 
-.button, button {
+%button-base {
 	@extend %button;
+
+	font-family: v.$ff-i;
+	font-weight: v.$fw-400;
+	font-size: 14px;
+	padding: 8px 12px;
+
+	@media(min-width: v.$md) {
+		font-size: 16px;
+		padding: 14px 16px;
+	}
+}
+
+.button, button {
+	@extend %button-base;
 
 	border-radius: v.$br4;
 	border: 1px solid transparent;
 
 	&.borderless {
-		font-family: v.$ff-i;
-		font-weight: v.$fw-400;
-		font-size: 14px;
-		border-color: v.$c-light;
-		padding: 8px 12px;
 		color: v.$c-black;
+		border-color: v.$c-light;
 		position: relative;
 
 		@include bg.button-bg;
-
-		@media(min-width: v.$md) {
-			font-size: 16px;
-			padding: 14px 16px;
-		}
 
 		&.active {
 			z-index: 1;
@@ -32,5 +37,44 @@
 				opacity: 1;
 			}
 		}
+
+		&.square {
+			width: 30px;
+			height: 30px;
+			padding: 0;
+			aspect-ratio: 1;
+
+			@media(min-width: v.$md) {
+				width: 40px;
+				height: 40px;
+			}
+
+			@media(min-width: v.$xl) {
+				width: 50px;
+				height: 50px;
+			}
+		}
 	}
+
+	&.filled {
+		@extend %button-base;
+
+		padding: 9px 12px;
+		border: 0;
+		color: v.$c-white;
+		border-radius: v.$br4;
+		position: relative;
+
+		@include bg.button-bg;
+
+
+		&::after {
+			opacity: 1;
+		}
+
+		@media(min-width: v.$md) {
+			padding: 15px 16px;
+		}
+	}
+
 }

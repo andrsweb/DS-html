@@ -1,4 +1,6 @@
 import './modal';
+import { initTabsSliders } from '../tabsSlider.js';
+import { initProductCards } from './productCard.js';
 
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 
@@ -6,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	"use strict";
 		initBurgerMenu();
 		initLanguageSwitcher();
+		initTabsSliders();
+		initProductCards();
 });
 
 const initBurgerMenu = () => {
@@ -16,13 +20,6 @@ const initBurgerMenu = () => {
 	const search = header ? header.querySelector('.header-search') : null;
 
 	if (!header || !burger || !nav || !headerInner || !search) return;
-
-	const resetSubmenuHeight = (menuItem) => {
-		const subMenu = menuItem.querySelector('.sub-menu');
-		if (subMenu) {
-			subMenu.style.height = '';
-		}
-	};
 
 	const moveSearchToMenu = () => {
 		if (!nav.contains(search)) {

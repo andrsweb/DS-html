@@ -1,7 +1,7 @@
 @use '../vars/vars' as v;
 
 @mixin button-bg {
-	border-color: v.$c-accent;
+	overflow: hidden;
 
 	&::after {
 		content: '';

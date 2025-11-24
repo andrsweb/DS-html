@@ -1,0 +1,162 @@
+@use '../../../../scss/vars/vars' as v;
+@use '../../../../scss/ui/bg' as bg;
+@use '../../../../scss/mixins/global' as g;
+
+.cards-slider {
+	padding: 80px 0;
+	
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+
+		@media(min-width: v.$md) {
+			gap: 70px;
+		}
+
+		@media(min-width: v.$xl) {
+			gap: 100px;
+		}
+	}
+	
+	&-title {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 16px;
+
+		@media(min-width: v.$md) {
+			gap: 24px;
+		}
+
+		h3 {
+			font-family: v.$ff;
+			font-weight: v.$fw-700;
+			font-size: 32px;
+			line-height: 36px;
+			color: v.$c-black;
+
+			@media(min-width: v.$md) {
+				font-size: 40px;
+				line-height: 44px;
+			}
+		}
+		
+		p {
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			font-size: 18px;
+			color: v.$c-gray;
+			line-height: v.$lh130;
+			text-align: center;
+
+			@media(min-width: v.$md) {
+				font-size: 24px;
+			}
+		}
+	}
+	
+	&-content {
+		display: flex;
+		flex-direction: column;
+	}
+	
+	&-actions {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+		margin-bottom: 20px;
+
+		@media(min-width: v.$md) {
+			gap: 30px;
+			margin-bottom: 30px;
+		}
+
+		h4 {
+			font-family: v.$ff;
+			font-weight: v.$fw-500;
+			font-size: 28px;
+			line-height: 32px;
+
+			@media(min-width: v.$md) {
+				font-size: 36px;
+				line-height: 44px;
+			}
+		}
+	}
+}
+
+.slider-actions-buttons {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	
+	.tab-buttons {
+		display: flex;
+		gap: 8px;
+		flex-wrap: wrap;
+
+		@media(min-width: v.$md) {
+			gap: 16px;
+		}
+	}
+	
+	.swiper-navigation {
+		display: flex;
+		gap: 8px;
+
+		@media(min-width: v.$md) {
+			gap: 16px;
+		}
+	}
+}
+
+.tabs-content-wrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 30px;
+
+	@media(min-width: v.$xl) {
+		flex-direction: row;
+		align-items: stretch;
+	}
+}
+
+.tabs-content {
+	width: 100%;
+
+	@media(min-width: v.$xl) {
+		width: calc(100% - 372px);
+	}
+}
+
+.tab-content {
+	width: 100%;
+	display: none;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	
+	&.active {
+		display: block;
+		opacity: 1;
+		animation: fadeIn 1s forwards ease-in-out;
+
+		@keyframes fadeIn {
+			0% {opacity: 0;}
+			100% {opacity: 1;}
+		}
+	}
+
+	.swiper-cards {
+		width: 100%;
+		overflow: hidden;
+	}
+}
+

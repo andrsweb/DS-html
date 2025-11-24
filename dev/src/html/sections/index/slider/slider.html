@@ -1,0 +1,148 @@
+<section class="cards-slider">
+    <h2 class="sr-only">Заголовок для скринридеров</h2>
+    <div class="container">
+        <div class="cards-slider-wrapper">
+            <div class="cards-slider-title">
+                <h3>Ваш гид по миру проверенных брендов</h3>
+                <div class="texts">
+                    <p>
+                        Мы работаем с лучшими селекционерами и брендами, чтобы предложить покупателям только
+                        проверенные генетики. Наш магазин — это прозрачность, внимание к деталям и уважение к каждому
+                        клиенту. Доставляем качество, сопровождаем информацией и гарантируем легальность. С нами удобно, безопасно и просто.
+                    </p>
+                </div>
+            </div>
+            <div class="cards-slider-content">
+                <div class="cards-slider-actions">
+                    <h4>Новинки</h4>
+                    <div class="slider-actions-buttons">
+                        <div class="tab-buttons">
+                            <button class="button borderless active" data-tab="autoflowering">
+                                Автоцветущие
+                            </button>
+                            <button class="button borderless" data-tab="photoperiodic">
+                                Фотопериодные
+                            </button>
+                            <button class="button borderless" data-tab="regular">
+                                Регулярные
+                            </button>
+                            <button class="button borderless" data-tab="mixes">
+                                Миксы семян
+                            </button>
+                            <button class="button borderless" data-tab="bulk">
+                                Крупные пачки
+                            </button>
+                        </div>
+                        <div class="swiper-navigation">
+                            <button class="swiper-prev">
+                                <img src="/img/slide-arrow.svg" width="20" height="20" alt="Векторная стрелка">
+                            </button>
+                            <button class="swiper-next">
+                                <img src="/img/slide-arrow.svg" width="20" height="20" alt="Векторная стрелка">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs-content-wrapper">
+                    @@include('components/cta-card/cta-card.html')
+                    <div class="tabs-content">
+                        <div class="tab-content active" data-tab="autoflowering">
+                            <div class="swiper swiper-cards">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c2.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" data-tab="photoperiodic">
+                            <div class="swiper swiper-cards">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c2.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" data-tab="regular">
+                            <div class="swiper swiper-cards">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c2.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" data-tab="mixes">
+                            <div class="swiper swiper-cards">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c2.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-content" data-tab="bulk">
+                            <div class="swiper swiper-cards">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c1.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c2.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c3.jpg"})
+                                    </div>
+                                    <div class="swiper-slide">
+                                        @@include('components/card/card.html', {"src": "/img/c2.jpg"})
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

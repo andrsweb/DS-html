@@ -39,4 +39,30 @@
 			}
 		}
 	}
+
+	.view-all {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 24px;
+
+		a {
+			font-family: v.$ff-i;
+			font-weight: v.$fw-400;
+			line-height: v.$lh130;
+			font-size: 14px;
+			text-decoration: underline;
+			color: v.$c-gray;
+			transition: opacity ease-in-out v.$tr;
+
+			@media(min-width: v.$md) {
+				font-size: 16px;
+			}
+
+			@include g.hover {
+				opacity: v.$op;
+			}
+		}
+	}
 }

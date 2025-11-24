@@ -1,0 +1,38 @@
+@use '../vars/vars' as v;
+@use '../../scss/ui/bg' as bg;
+@use '../../scss/mixins/global' as g;
+@use '../utils/placeholders/buttons/button' as *;
+
+.swiper-prev, .swiper-next {
+	@extend %button;
+
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	outline: 1px solid v.$c-light;
+	overflow: hidden;
+	position: relative;
+
+	@include bg.button-bg;
+
+	img {
+		width: 20px;
+		height: 20px;
+	}
+
+	@include g.hover {
+		img {
+			filter: invert(1) brightness(2);
+		}
+
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
+.swiper-next {
+	img {
+		transform: rotate(180deg);
+	}
+}

@@ -1,0 +1,74 @@
+@use '../../../scss/vars/vars' as v;
+@use '../../../scss/mixins/global' as g;
+
+.cta-card {
+	width: 100%;
+	max-width: 342px;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+	background-color: v.$c-white;
+	border-radius: v.$br4;
+
+	@media(min-width: v.$xl) {
+		display: flex;
+	}
+
+	&-img {
+		width: 100%;
+		height: 460px;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: v.$br4;
+		}
+	}
+
+	&-info {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 34px 40px;
+		border-radius: v.$br4;
+		border: 1px solid v.$c-light;
+	}
+
+	&-title {
+		font-family: v.$ff;
+		font-weight: v.$fw-500;
+		line-height: v.$lh130;
+		font-size: 24px;
+		color: v.$c-black;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	p, a {
+		font-family: v.$ff;
+		font-weight: v.$fw-300;
+		color: v.$c-black;
+		font-size: 16px;
+		line-height: v.$lh130;
+		text-align: center;
+
+	}
+
+	p {
+		margin-bottom: 34px;
+	}
+
+	a {
+		color: v.$c-accent-light;
+		text-decoration: underline;
+		transition: opacity ease-in-out v.$tr;
+
+		@include g.hover {
+			opacity: v.$op;
+			text-decoration: none;
+		}
+	}
+}
