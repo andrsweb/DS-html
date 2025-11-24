@@ -124,9 +124,6 @@
 
 		button {
 			flex-shrink: 0;
-
-			@media(min-width: v.$md) {
-			}
 		}
 	}
 	
@@ -174,9 +171,9 @@
 	&.active {
 		display: block;
 		opacity: 1;
-		animation: fadeIn 1s forwards ease-in-out;
+		animation: fade 1s forwards ease-in-out;
 
-		@keyframes fadeIn {
+		@keyframes fade {
 			0% {opacity: 0;}
 			100% {opacity: 1;}
 		}

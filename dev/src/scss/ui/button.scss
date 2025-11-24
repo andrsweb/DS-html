@@ -33,7 +33,7 @@
 			z-index: 1;
 			color: v.$c-white;
 
-			&:after {
+			&::after {
 				opacity: 1;
 			}
 		}
