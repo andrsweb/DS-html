@@ -1,6 +1,30 @@
 @use '../vars/vars' as v;
+@use '../../scss/ui/bg' as bg;
 @use '../utils/placeholders/buttons/button' as *;
 
 .button, button {
 	@extend %button;
+	border-radius: v.$br4;
+	border: 1px solid transparent;
+
+	&.borderless {
+		font-family: v.$ff-i;
+		font-weight: v.$fw-400;
+		font-size: 14px;
+		border-color: v.$c-light;
+		padding: 12px;
+		color: v.$c-black;
+		position: relative;
+
+		@media(min-width: v.$md) {
+			font-size: 16px;
+			padding: 16px;
+		}
+
+		&.active {
+			z-index: 1;
+			color: v.$c-white;
+			@include bg.button-bg;
+		}
+	}
 }
