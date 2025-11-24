@@ -1,0 +1,101 @@
+@use '../../../../scss/vars/vars' as v;
+
+.banner {
+	display: flex;
+	width: 100%;
+	min-height: 250px;
+	position: relative;
+
+	@media(min-width: v.$md) {
+		min-height: 410px;
+	}
+
+	&-bg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: -1;
+	}
+
+	&-wrapper {
+		padding: 42px 20px;
+		width: 100%;
+		max-width: 1480px;
+		min-height: 100%;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		@media(min-width: v.$md) {
+			padding: 62px 20px;
+		}
+	}
+
+	&-info {
+		width: 100%;
+		max-width: 367px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+
+		@media(min-width: v.$md) {
+			gap: 44px;
+		}
+
+		p {
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			color: v.$c-white;
+			line-height: v.$lh150;
+			font-size: 14px;
+
+			@media(min-width: v.$md) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&-title {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		span {
+			font-family: v.$ff;
+			font-weight: v.$fw-400;
+			color: v.$c-orange;
+			line-height: v.$lh150;
+			letter-spacing: 4px;
+			margin-bottom: 44px;
+		}
+
+		h3 {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			text-transform: uppercase;
+			font-family: v.$ff;
+			font-weight: v.$fw-700;
+			color: v.$c-white;
+			font-size: 48px;
+			gap: 10px;
+			line-height: 1;
+
+			@media(min-width: v.$md) {
+				font-size: 64px;
+			}
+
+			em {
+				font-size: 24px;
+				font-style: normal;
+
+				@media(min-width: v.$md) {
+					font-size: 36px;
+				}
+			}
+		}
+	}
+}

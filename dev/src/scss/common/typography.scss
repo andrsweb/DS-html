@@ -21,3 +21,14 @@ b,
 strong {
 	font-weight: v.$fw-700
 }
+
+.texts {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 16px;
+
+	@media(min-width: v.$xl) {
+		gap: 20px;
+	}
+}
