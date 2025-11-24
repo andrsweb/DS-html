@@ -1,4 +1,5 @@
 @use '../vars/vars' as v;
+@use '../mixins/global' as g;
 
 * {
 	outline: none;
@@ -24,19 +25,19 @@ body {
 	background-color: v.$c-white;
 }
 
-button, a, textarea, select {
-	&:focus-visible {
-		outline: 2px solid v.$c-accent;
-		outline-offset: 4px;
-		border-radius: 2px;
-	}
+input {
+	@include g.focus-visible(v.$c-gray);
 }
 
-input {
-	&:focus-visible {
-		outline: 1px solid v.$c-gray;
-	}
+textarea {
+	@include g.focus-visible(v.$c-accent, 4px, 2px);
 }
+
+button, a, select {
+	@include g.focus-visible(v.$c-accent, 4px, 2px);
+}
+
+
 
 
 img {

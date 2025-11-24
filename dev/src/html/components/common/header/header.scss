@@ -94,6 +94,14 @@
 		justify-content: center;
 		gap: 20px;
 
+		@media(min-width: v.$lg) {
+			gap: 40px;
+		}
+
+		@media(min-width: v.$xxl) {
+			gap: 79px;
+		}
+
 		&-item {
 			position: relative;
 
@@ -114,7 +122,7 @@
 					position: relative;
 					padding-right: 18px;
 
-					&:after {
+					&::after {
 						content: '';
 						position: absolute;
 						right: 0;
@@ -154,7 +162,7 @@
 						visibility 0s linear v.$tr;
 
 					a {
-						&:after {
+						&::after {
 							display: none;
 						}
 					}
@@ -171,7 +179,7 @@
 						visibility 0s;
 				}
 
-				&:hover a:after {
+				&:hover a::after {
 					transform: translateY(-50%) rotate(180deg);
 				}
 
@@ -186,10 +194,26 @@
 						visibility 0s;
 				}
 
-				&.sub-open a:after {
+				&.sub-open a::after {
 					transform: translateY(-50%) rotate(180deg);
 				}
 			}
+		}
+	}
+
+	&-actions {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+	}
+
+	&-action img {
+		width: 16px;
+		height: 16px;
+
+		@media(min-width: v.$md) {
+			width: 24px;
+			height: 24px;
 		}
 	}
 
@@ -234,6 +258,7 @@
 
 		button {
 			@extend %button;
+
 			position: absolute;
 			right: 14px;
 			top: 50%;
@@ -255,14 +280,9 @@
 		}
 	}
 
-	&-actions {
-		display: flex;
-		align-items: center;
-		gap: 8px;
-	}
-
 	&-action {
 		@extend %button;
+
 		flex-shrink: 0;
 		width: 30px;
 		height: 30px;
@@ -288,20 +308,10 @@
 			height: 50px;
 		}
 
-		img {
-			width: 16px;
-			height: 16px;
-
-			@media(min-width: v.$md) {
-				width: 24px;
-				height: 24px;
-			}
-
-		}
-
 		&.color {
 			position: relative;
 			z-index: 1;
+
 			@include bg.button-bg;
 		}
 
@@ -312,6 +322,7 @@
 
 	&-burger {
 		@extend %button;
+
 		flex-shrink: 0;
 		width: 30px;
 		height: 30px;
@@ -418,8 +429,8 @@
 					margin-top v.$tr ease-in-out;
 			}
 
-			&:hover a:after,
-			&.sub-open a:after {
+			&:hover a::after,
+			&.sub-open a::after {
 				transform: translateY(-50%) rotate(180deg);
 			}
 		}
@@ -470,8 +481,8 @@
 			transform: none;
 			pointer-events: auto;
 		
-			&:before,
-			&:after {
+			&::before,
+			&::after {
 				content: '';
 				position: absolute;
 				left: 0;
@@ -481,11 +492,11 @@
 				background-color: v.$c-light;
 			}
 		
-			&:before {
+			&::before {
 				top: 0;
 			}
 		
-			&:after {
+			&::after {
 				bottom: 0;
 			}
 		}

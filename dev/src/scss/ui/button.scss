@@ -4,6 +4,7 @@
 
 .button, button {
 	@extend %button;
+
 	border-radius: v.$br4;
 	border: 1px solid transparent;
 
@@ -24,6 +25,7 @@
 		&.active {
 			z-index: 1;
 			color: v.$c-white;
+
 			@include bg.button-bg;
 		}
 	}

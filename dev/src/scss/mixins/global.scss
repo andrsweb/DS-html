@@ -8,6 +8,17 @@
 	}
 }
 
+@mixin focus-visible($color, $offset: 0, $radius: 0) {
+	outline: none;
+
+	&:focus-visible {
+		outline: 2px solid $color;
+		outline-offset: $offset;
+		border-radius: $radius;
+	}
+}
+
+
 @mixin hide-x-scrollbar {
 	overflow-x: auto;
 	-ms-overflow-style: none;
