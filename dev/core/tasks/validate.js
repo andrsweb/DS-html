@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import fg from 'fast-glob';
+import fs from 'fs/promises';
 import {w3cHtmlValidator} from 'w3c-html-validator';
 import gulpStylelint from 'gulp-stylelint-esm';
 import {paths} from '../config/paths.js';
@@ -48,18 +49,59 @@ async function runHtmlValidation(failAfterError) {
 	let hasErrors = false;
 
 	for (const filename of files) {
-		const results = await w3cHtmlValidator.validate({
-			filename,
-			output: 'json'
-		});
+		try {
+			const fileContent = await fs.readFile(filename, 'utf8');
+			
+			if (!fileContent.trim()) {
+				console.log(`HTML validation skipped for ${filename} - empty file`);
+				continue;
+			}
+			
+			let attempts = 0;
+			const maxAttempts = 3;
+			let results = null;
+			
+			while (attempts < maxAttempts && !results) {
+				try {
+					results = await w3cHtmlValidator.validate({
+						filename,
+						output: 'json'
+					});
+				} catch (attemptError) {
+					attempts++;
+					if (attemptError.message.includes('429') || attemptError.message.includes('Too Many Requests')) {
+						if (attempts < maxAttempts) {
+							const delay = 2000 * attempts;
+							console.log(`Rate limit hit, retrying ${filename} in ${delay/1000}s... (attempt ${attempts}/${maxAttempts})`);
+							await new Promise(resolve => setTimeout(resolve, delay));
+							continue;
+						} else {
+							console.log(`HTML validation skipped for ${filename} - W3C API rate limit reached after ${maxAttempts} attempts`);
+							continue;
+						}
+					}
+					throw attemptError;
+				}
+			}
 
-		if (!results.validates) {
-			hasErrors = true;
+			if (results && !results.validates) {
+				hasErrors = true;
+			}
+
+			if (results) {
+				w3cHtmlValidator.reporter(results, {
+					title: filename
+				});
+			}
+		} catch (error) {
+			if (error.message.includes('400') || error.message.includes('No input document')) {
+				console.log(`⚠️  HTML validation skipped for ${filename} - W3C API error`);
+				continue;
+			}
+			throw error;
 		}
 
-		w3cHtmlValidator.reporter(results, {
-			title: filename
-		});
+		await new Promise(resolve => setTimeout(resolve, 3000));
 	}
 
 	if (failAfterError && hasErrors) {
@@ -71,19 +113,9 @@ export async function validateHtml() {
 	await runHtmlValidation(true);
 }
 
-export async function lintHtmlDev() {
-	await runHtmlValidation(false);
-}
-
 export function validateStyles() {
 	return src(['dev/src/**/*.scss'], {allowEmpty: true}).pipe(
 		gulpStylelint(createStylelintOptions(true))
-	);
-}
-
-export function lintStylesDev() {
-	return src(['dev/src/**/*.scss'], {allowEmpty: true}).pipe(
-		gulpStylelint(createStylelintOptions(false))
 	);
 }
 
