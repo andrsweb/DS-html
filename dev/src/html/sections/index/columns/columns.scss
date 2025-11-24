@@ -1,0 +1,48 @@
+@use '../../../../scss/vars/vars' as v;
+@use '../../../../scss/mixins/global' as g;
+
+.columns {
+	width: 100%;
+	padding: 20px 0 12px;
+
+	@media(min-width: v.$xl) {
+		padding: 30px 0 17px;
+	}
+
+	&-items {
+		width: 100%;
+		column-count: 2;
+		column-gap: 16px;
+
+		@media(min-width: v.$sm) {
+			column-count: 3;
+		}
+
+		@media(min-width: v.$md) {
+			column-count: 4;
+		}
+
+		@media(min-width: v.$lg) {
+			column-count: 5;
+		}
+
+		a {
+			width: 100%;
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			color: v.$c-black;
+			line-height: v.$lh150;
+			font-size: 14px;
+			margin-bottom: 4px;
+
+			@media(min-width: v.$lg) {
+				font-size: 16px;
+				margin-bottom: 8px;
+			}
+
+			@include g.hover {
+				color: v.$c-accent;
+			}
+		}
+	}
+}
