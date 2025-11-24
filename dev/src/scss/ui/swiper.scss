@@ -6,14 +6,19 @@
 .swiper-prev, .swiper-next {
 	@extend %button;
 
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
 	border-radius: 50%;
 	outline: 1px solid v.$c-light;
 	overflow: hidden;
 	position: relative;
 
 	@include bg.button-bg;
+
+	@media(min-width: v.$md) {
+		width: 50px;
+		height: 50px;
+	}
 
 	img {
 		width: 20px;
@@ -28,6 +33,10 @@
 		&::after {
 			opacity: 1;
 		}
+	}
+
+	&:active {
+		opacity: v.$op;
 	}
 }
 

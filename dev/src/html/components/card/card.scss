@@ -14,10 +14,23 @@
 
 	&-img {
 		width: 100%;
-		height: 287px;
+		height: 250px;
 		border-radius: v.$br4;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 		transition: opacity ease-in-out v.$tr;
+
+		@media(min-width: v.$md) {
+			height: 270px;
+			margin-bottom: 20px;
+		}
+
+		@media(min-width: v.$lg) {
+			height: 287px;
+		}
+
+		@media(min-width: v.$xl) {
+			height: 287px;
+		}
 
 		img {
 			width: 100%;
@@ -39,10 +52,16 @@
 		&-top {
 			width: 100%;
 			display: flex;
+			flex-wrap: wrap;
 			align-items: center;
 			justify-content: space-between;
-			gap: 16px;
-			margin-bottom: 20px;
+			gap: 8px;
+			margin-bottom: 10px;
+
+			@media(min-width: v.$md) {
+				margin-bottom: 20px;
+				gap: 16px;
+			}
 		}
 	}
 
@@ -56,12 +75,17 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		padding: 6px 15px;
+		padding: 4px 12px;
 		border-radius: v.$br4;
 		color: v.$c-white;
 		font-family: v.$ff;
-		font-size: 14px;
+		font-size: 12px;
 		line-height: v.$lh150;
+
+		@media(min-width: v.$md) {
+			padding: 6px 15px;
+			font-size: 14px;
+		}
 
 		&.red {
 			background-color: v.$c-red;
@@ -78,15 +102,24 @@
 		gap: 8px;
 
 		img {
-			width: 20px;
-			height: 20px;
+			width: 14px;
+			height: 14px;
+
+			@media(min-width: v.$md) {
+				width: 20px;
+				height: 20px;
+			}
 		}
 
 		span {
 			font-family: v.$ff;
 			font-weight: v.$fw-300;
-			font-size: 14px;
+			font-size: 12px;
 			line-height: v.$lh150;
+
+			@media(min-width: v.$md) {
+				font-size: 14px;
+			}
 		}
 	}
 
@@ -99,7 +132,11 @@
 
 	&-title {
 		width: 100%;
+		margin-bottom: 10px;
+
+		@media(min-width: v.$md) {
 			margin-bottom: 20px;
+		}
 
 		h5 {
 			display: flex;
@@ -107,8 +144,12 @@
 			font-family: v.$ff;
 			font-weight: v.$fw-300;
 			color: v.$c-gray;
-			font-size: 20px;
+			font-size: 18px;
 			line-height: v.$lh130;
+
+			@media(min-width: v.$md) {
+				font-size: 20px;
+			}
 
 			em {
 				font-style: normal;
@@ -122,10 +163,15 @@
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 14px;
+		gap: 8px;
 		padding-bottom: 20px;
 		border-bottom: 1px solid v.$c-light;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+
+		@media(min-width: v.$md) {
+			margin-bottom: 20px;
+			gap: 14px;
+		}
 	}
 
 	&-row {
@@ -158,8 +204,13 @@
 			gap: 10px;
 
 			img {
-				width: 20px;
-				height: 20px;
+				width: 16px;
+				height: 16px;
+
+				@media(min-width: v.$md) {
+					width: 20px;
+					height: 20px;
+				}
 			}
 		}
 
@@ -168,14 +219,20 @@
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			gap: 16px;
+			gap: 10px;
+
+			@media(min-width: v.$md) {
+				gap: 16px;
+			}
 
 			.left {
 				display: flex;
 				align-items: center;
-				gap: 14px;
+				gap: 8px;
 
-				span {}
+				@media(min-width: v.$md) {
+					gap: 14px;
+				}
 
 				.types {
 					display: flex;
@@ -192,14 +249,21 @@
 			.right {
 				display: flex;
 				align-items: center;
-				gap: 14px;
+				gap: 8px;
 
-				img {
-					width: 20px;
-					height: 20px;
+				@media(min-width: v.$md) {
+					gap: 14px;
 				}
 
-				span {}
+				img {
+					width: 16px;
+					height: 16px;
+
+					@media(min-width: v.$md) {
+						width: 20px;
+						height: 20px;
+					}
+				}
 			}
 		}
 	}
@@ -207,24 +271,37 @@
 	&-price {
 		display: flex;
 		align-items: center;
-		gap: 16px;
-		margin-bottom: 20px;
+		gap: 8px;
+		margin-bottom: 10px;
+
+		@media(min-width: v.$md) {
+			gap: 16px;
+			margin-bottom: 20px;
+		}
 
 		.old-price {
 			font-family: v.$ff;
 			font-weight: v.$fw-300;
 			line-height: v.$lh150;
 			color: #BABABA;
-			font-size: 16px;
+			font-size: 14px;
 			text-decoration: line-through;
+
+			@media(min-width: v.$md) {
+				font-size: 16px;
+			}
 		}
 
 		.new-price {
 			font-family: v.$ff;
 			font-weight: v.$fw-400;
 			line-height: v.$lh150;
-			font-size: 24px;
+			font-size: 20px;
 			color: v.$c-accent;
+
+			@media(min-width: v.$md) {
+				font-size: 24px;
+			}
 		}
 	}
 
@@ -232,21 +309,31 @@
 		width: 100%;
 		display: flex;
 		align-items: center;
-		gap: 16px;
-		margin-bottom: 20px;
+		gap: 8px;
+		margin-bottom: 10px;
+
+		@media(min-width: v.$md) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&-bottom {
 		width: 100%;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
-		gap: 16px;
+		gap: 8px;
+
+		@media(min-width: v.$md) {
+			gap: 16px;
+		}
 	}
 
 	&-counter {
 		display: flex;
 		align-items: center;
+		padding: 2px 0;
 
 		.decr, .incr {
 			width: 36px;
@@ -301,9 +388,12 @@
 	}
 
 	.add {
-		min-width: 137px;
 		z-index: 1;
 		transition: opacity ease-in-out v.$tr;
+
+		@media(min-width: v.$md) {
+			min-width: 137px;
+		}
 
 		@include g.hover {
 			opacity: v.$op;
