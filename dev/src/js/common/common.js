@@ -5,6 +5,7 @@ import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body
 document.addEventListener("DOMContentLoaded", () => {
 	"use strict";
 		initBurgerMenu();
+		initLanguageSwitcher();
 });
 
 const initBurgerMenu = () => {
@@ -122,4 +123,32 @@ const initBurgerMenu = () => {
 	};
 
 	mediaQuery.addEventListener('change', handleMediaChange);
+}
+
+const initLanguageSwitcher = () => {
+	const langButton = document.getElementById('lang');
+	const body = document.body;
+	
+	if (!langButton || !body) return;
+	
+	const currentLang = localStorage.getItem('selectedLanguage') || 'ru';
+	body.setAttribute('data-lang', currentLang);
+	
+	const updateLangButton = (lang) => {
+		const span = langButton.querySelector('span');
+		if (span) {
+			span.textContent = lang === 'ru' ? 'EN' : 'RU';
+		}
+	};
+	
+	updateLangButton(currentLang);
+	
+	langButton.addEventListener('click', () => {
+		const currentLang = body.getAttribute('data-lang');
+		const newLang = currentLang === 'ru' ? 'en' : 'ru';
+		
+		body.setAttribute('data-lang', newLang);
+		localStorage.setItem('selectedLanguage', newLang);
+		updateLangButton(newLang);
+	});
 }
