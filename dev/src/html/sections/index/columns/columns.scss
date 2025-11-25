@@ -19,37 +19,54 @@
 
 	&-items {
 		width: 100%;
-		column-count: 2;
-		column-gap: 16px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 16px;
+		position: relative;
 
-		@media(min-width: v.$sm) {
-			column-count: 3;
-		}
-
-		@media(min-width: v.$md) {
-			column-count: 4;
-		}
-
-		@media(min-width: v.$lg) {
-			column-count: 5;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 100vw;
+			height: calc(100% + 32px);
+			margin-left: calc(50% - 50vw);
+			display: block;
+			background-image: url("/img/accent-bg.jpg");
+			z-index: -1;
 		}
 
 		a {
-			width: 100%;
+			width: calc((100% - 16px) / 2);
 			font-family: v.$ff;
 			font-weight: v.$fw-300;
-			color: v.$c-black;
+			color: v.$c-white;
 			line-height: v.$lh150;
 			font-size: 14px;
-			margin-bottom: 4px;
-
-			@media(min-width: v.$lg) {
-				font-size: 16px;
-				margin-bottom: 8px;
-			}
 
 			@include g.hover {
-				color: v.$c-accent;
+				color: v.$c-orange;
+			}
+		}
+
+		@media (min-width: v.$sm) {
+			a {
+				width: calc((100% - (16px * 2)) / 3);
+			}
+		}
+
+		@media (min-width: v.$md) {
+			a {
+				width: calc((100% - (16px * 3)) / 4);
+			}
+		}
+
+		@media (min-width: v.$lg) {
+			a {
+				width: calc((100% - (16px * 4)) / 5);
+				font-size: 16px;
 			}
 		}
 	}
