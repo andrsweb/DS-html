@@ -22,6 +22,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 16px;
+		padding: 16px 0;
 		position: relative;
 
 		&::before {
@@ -31,7 +32,7 @@
 			left: 0;
 			transform: translateY(-50%);
 			width: 100vw;
-			height: calc(100% + 32px);
+			height: 100%;
 			margin-left: calc(50% - 50vw);
 			display: block;
 			background-image: url("/img/accent-bg.jpg");
@@ -58,6 +59,8 @@
 		}
 
 		@media (min-width: v.$md) {
+			padding: 30px 0;
+
 			a {
 				width: calc((100% - (16px * 3)) / 4);
 			}
