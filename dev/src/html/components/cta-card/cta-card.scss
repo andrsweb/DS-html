@@ -28,6 +28,22 @@
 		@media(min-width: v.$xl) {
 			display: none;
 		}
+
+		.cta-card-img {
+			width: 100vw;
+
+			img {
+				border-radius: 0;
+			}
+
+			@media(min-width: v.$sm) {
+				width: 100%;
+
+				img {
+					border-radius: v.$br4;
+				}
+			}
+		}
 	}
 
 	&.desk {
@@ -59,8 +75,9 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		padding: 0 33px;
+		padding: 0 33px 40px 33px;
 		border-radius: v.$br4;
+		border-bottom: 1px solid v.$c-light;
 
 		@media(min-width: v.$sm) {
 			padding: 0 10px;

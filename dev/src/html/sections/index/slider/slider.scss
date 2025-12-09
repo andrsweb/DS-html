@@ -83,12 +83,11 @@
 		h4 {
 			font-family: v.$ff;
 			font-weight: v.$fw-500;
-			font-size: 28px;
-			line-height: 32px;
+			font-size: 20px;
+			line-height: 100%;
 
 			@media(min-width: v.$md) {
 				font-size: 36px;
-				line-height: 44px;
 			}
 		}
 	}
