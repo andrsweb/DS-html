@@ -46,6 +46,15 @@
 		}
 	}
 
+	&.orange {
+		font-family: v.$ff;
+		font-size: 16px;
+		line-height: v.$lh150;
+		background-color: v.$c-orange;
+		color: v.$c-white;
+		padding: 13px 26px;
+	}
+
 	&.filled {
 		@extend %button-base;
 
