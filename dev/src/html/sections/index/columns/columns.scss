@@ -3,7 +3,11 @@
 
 .columns {
 	width: 100%;
-	padding: 30px 0;
+	padding: 24px 0;
+
+	@media(min-width: v.$md) {
+		padding: 30px 0;
+	}
 
 	&-inner {
 		width: 100%;
@@ -17,11 +21,41 @@
 		}
 	}
 
+	&-title {
+		width: 100%;
+		max-width: 290px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 14px;
+		margin: 0 auto 24px auto;
+
+		h2,h3 {
+			font-family: v.$ff;
+			color: v.$c-black;
+			font-size: 16px;
+			line-height: 120%;
+			text-align: center;
+		}
+
+		h2 {
+			font-weight: v.$fw-700;
+		}
+
+		h3 {
+			font-weight: v.$fw-300;
+		}
+
+		@media(min-width: v.$xl) {
+			display: none;
+		}
+	}
+
 	&-items {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 16px;
+		gap: 8px;
 		padding: 16px 0;
 		position: relative;
 
