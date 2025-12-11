@@ -172,8 +172,7 @@
 	&-bottom {
 		width: 100%;
 		display: flex;
-		flex-direction: column-reverse;
-		flex-wrap: wrap;
+		flex-flow: column-reverse wrap;
 		align-items: center;
 		justify-content: space-between;
 		gap: 16px;

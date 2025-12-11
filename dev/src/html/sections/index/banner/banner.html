@@ -2,7 +2,10 @@
     <h2 class="sr-only">
         Невидимый заголовок для скринридеров и крутой семантики
     </h2>
-    <img class="banner-bg" src="/img/banner.jpg" srcset="/img/banner-mob.jpg 768w" sizes="(max-width: 768px) 100vw, 100vw" alt="Баннер">
+    <picture>
+        <source media="(max-width: 768px)" srcset="/img/banner-mob.jpg">
+        <img class="banner-bg" src="/img/banner.jpg" alt="Баннер">
+    </picture>
     <div class="banner-wrapper">
         <div class="banner-info">
             <div class="banner-title">
