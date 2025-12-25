@@ -136,14 +136,13 @@
 	.menu {
 		width: 100%;
 		display: flex;
-		flex-wrap: wrap;
-		flex-direction: column;
+		flex-flow: column wrap;
 		align-items: flex-start;
 		justify-content: flex-start;
 		gap: 16px;
 
 		@media(min-width: v.$lg) {
-			flex-direction: row;
+			flex-flow: row wrap;
 			align-items: center;
 			justify-content: center;
 			gap: 40px;
@@ -462,7 +461,7 @@
 			height: 50px;
 		}
 
-		span {
+		.burger-line {
 			width: 20px;
 			height: 2px;
 			background-color: v.$c-black;
@@ -495,7 +494,7 @@
 			width: 100%;
 		}
 
-		.menu-item a {
+		.menu .menu-item a {
 			font-size: 18px;
 		}
 
