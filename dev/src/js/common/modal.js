@@ -2,12 +2,12 @@ import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body
 
 document.addEventListener("DOMContentLoaded", () => {
 	"use strict";
-		new ModalManager();
+	new ModalManager();
 });
 
 class ModalManager {
 	constructor() {
-		this.ACTIVE_CLASS = "modal-active";
+		this.ACTIVE_CLASS = "modal-wrapper-active";
 		this.ATTRIBUTE_OPEN = "data-modal-open";
 		this.ATTRIBUTE_ID = "data-modal-id";
 		this.ATTRIBUTE_CLOSE = "data-modal-close";
@@ -29,11 +29,11 @@ class ModalManager {
 			return null;
 		}
 
-		return document.querySelector('.modal[' + this.ATTRIBUTE_ID + '="' + id + '"]');
+		return document.querySelector('.modal-wrapper[' + this.ATTRIBUTE_ID + '="' + id + '"]');
 	}
 
 	isModal(element) {
-		return Boolean(element) && element.classList && element.classList.contains("modal");
+		return Boolean(element) && element.classList && element.classList.contains("modal-wrapper");
 	}
 
 	openModal(modal) {
@@ -48,7 +48,8 @@ class ModalManager {
 		modal.classList.add(this.ACTIVE_CLASS);
 		try {
 			disableBodyScroll(modal);
-		} catch (error) {}
+		} catch (error) {
+		}
 
 		this.openModals.add(modal);
 	}
@@ -67,14 +68,16 @@ class ModalManager {
 
 		try {
 			enableBodyScroll(modal);
-		} catch (error) {}
+		} catch (error) {
+		}
 
 		this.openModals.delete(modal);
 
 		if (!this.openModals.size) {
 			try {
 				clearAllBodyScrollLocks();
-			} catch (error) {}
+			} catch (error) {
+			}
 		}
 	}
 
@@ -115,7 +118,7 @@ class ModalManager {
 		const closeTrigger = target.closest('[' + this.ATTRIBUTE_CLOSE + ']');
 
 		if (closeTrigger) {
-			const modal = closeTrigger.closest(".modal");
+			const modal = closeTrigger.closest(".modal-wrapper");
 
 			if (modal) {
 				this.closeModal(modal);
@@ -125,11 +128,10 @@ class ModalManager {
 			return;
 		}
 
-		const backdrop = target.closest(".modal");
+		const backdrop  = target.closest('.modal-wrapper');
+		const isModal   = target.closest('.modal');
 
-		if (backdrop && target === backdrop) {
-			this.closeModal(backdrop);
-		}
+		if (backdrop && backdrop === target && !isModal) this.closeModal(backdrop);
 	}
 
 	handleDocumentKeydown(event) {

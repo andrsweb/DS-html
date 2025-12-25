@@ -1,7 +1,7 @@
 @use '../vars/vars' as v;
 @use '../mixins/global' as g;
 
-.modal {
+.modal-wrapper {
 	position: fixed;
 	inset: 0;
 	display: flex;
@@ -15,6 +15,7 @@
 	pointer-events: none;
 	transition: opacity v.$tr ease, visibility v.$tr ease;
 	overflow-y: auto;
+	z-index: 100;
 
 	&-active {
 		opacity: 1;
