@@ -107,6 +107,8 @@ const initBurgerMenu = () => {
 	const mediaQuery = window.matchMedia('(min-width: 992px)');
 
 	const handleMediaChange = (event) => {
+		if (!header.classList.contains('menu-open')) return;
+
 		if (event.matches) {
 			closeMenu();
 			document.querySelectorAll('.menu-item-has-children.sub-open').forEach(item => {
