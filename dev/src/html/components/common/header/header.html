@@ -42,12 +42,13 @@
                             <button class="header-action filter">
                                 <img src="/img/filter.svg" width="24" height="24" alt="Векторная иконка">
                             </button>
-                            <button class="header-action color">
+                            <button class="header-action color" id="call-cart">
                                 <img src="/img/shopping-cart.svg" width="24" height="24" alt="Векторная иконка">
                             </button>
                             <button class="header-action" id="lang">
                                 <span>EN</span>
                             </button>
+                            @@include('components/popovers/shopping-cart/shopping-cart.html')
                         </div>
                         <button class="header-burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="header-nav">
                             <span class="burger-line"></span>
