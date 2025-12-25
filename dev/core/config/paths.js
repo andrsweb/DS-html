@@ -16,7 +16,10 @@ export const paths = {
 	},
 	scripts: {
 		src: 'dev/src/js/main.js',
-		watch: 'dev/src/js/**/*.js',
+		watch: [
+				'dev/src/js/**/*.js',
+				'dev/src/html/components/**/*.js'
+			],
 		dest: 'assets/js'
 	},
 	static: {
