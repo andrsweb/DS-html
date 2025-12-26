@@ -3,15 +3,12 @@
 @use '../../../../scss/utils/placeholders/buttons/button' as *;
 
 .search-result {
+	display: none;
 	width: 100%;
 	border: 1px solid v.$c-light;
 	background-color: v.$c-white;
 	border-radius: v.$br4;
 	padding: 8px;
-	opacity: 0;
-	visibility: hidden;
-	transform: translateY(-10%);
-	transition: opacity ease-in-out v.$tr, visibility ease-in-out v.$tr, transform ease-in-out v.$tr;
 
 	@media(min-width: v.$lg) {
 		position: absolute;
@@ -21,9 +18,7 @@
 	}
 
 	&.showed {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(0);
+		display: block;
 	}
 
 	&-items {
@@ -34,7 +29,7 @@
 	}
 
 	&-card {
-		min-width: 290px;
+		min-width: 220px;
 		display: flex;
 		align-items: stretch;
 		gap: 10px;
@@ -44,6 +39,10 @@
 
 		@include g.hover {
 			background-color: v.$c-light;
+		}
+
+		@media(min-width: v.$md) {
+			min-width: 290px;
 		}
 
 		&-img {
@@ -102,5 +101,15 @@
 			font-size: 16px;
 			color: v.$c-accent;
 		}
+	}
+
+	.all {
+		font-family: v.$ff;
+		font-weight: v.$fw-400;
+		color: v.$c-gray;
+		font-size: 14px;
+		line-height: v.$lh130;
+		text-decoration: underline;
+		margin-top: 12px;
 	}
 }

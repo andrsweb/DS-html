@@ -327,10 +327,37 @@
 	&-search {
 		display: none;
 		flex-grow: 1;
-		position: relative;
+		background-color: v.$c-white;
+		padding: 16px;
+		flex-direction: column;
+		gap: 16px;
+		position: absolute;
+		left: 50%;
+		top: 100%;
+		width: 100vw;
+		z-index: 99;
+		transform: translateX(-50%);
 
 		@media(min-width: v.$lg) {
 			display: flex;
+			flex-direction: row;
+			position: relative;
+			left: auto;
+			top: auto;
+			transform: translateX(0);
+			gap: 0;
+			width: auto;
+			padding: 0;
+			background-color: transparent;
+		}
+
+		&.showed {
+			display: flex;
+		}
+
+		&-input {
+			width: 100%;
+			position: relative;
 		}
 
 		input {

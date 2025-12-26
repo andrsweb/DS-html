@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	'use strict';
 
 	initSearchTest();
+	showMobileSearch();
 });
 
 const initSearchTest = () => {
@@ -10,9 +11,9 @@ const initSearchTest = () => {
 	if (!searchInputs.length) return;
 
 	searchInputs.forEach(searchInput => {
-		let searchResults = searchInput.closest('.modal-wrapper')?.querySelector('.search-result') 
+		let searchResults = searchInput.closest('.modal-wrapper')?.querySelector('.search-result')
 			|| searchInput.closest('.header')?.querySelector('.search-result');
-		
+
 		if (!searchResults) return;
 
 		searchInput.addEventListener('focus', () => {
@@ -34,3 +35,22 @@ const initSearchTest = () => {
 		});
 	});
 }; //Удалить потом его. Просто для вёрстки
+
+const showMobileSearch = () => {
+	const button = document.querySelector('.header-action.m');
+	const headerSearch = document.querySelector('.header-search');
+
+	if (!button || !headerSearch) return;
+
+	button.addEventListener('click', (e) => {
+		e.stopPropagation();
+		headerSearch.classList.toggle('showed');
+	});
+
+	document.addEventListener('click', (e) => {
+		const isClickInside = headerSearch.contains(e.target) || button.contains(e.target);
+		if (!isClickInside) {
+			headerSearch.classList.remove('showed');
+		}
+	});
+};
