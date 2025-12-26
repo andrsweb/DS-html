@@ -29,14 +29,16 @@
                     <div class="header-inner">
                         <form class="header-search">
                             <label for="search-input" class="sr-only">Поиск</label>
-                            <input id="search-input" type="search" name="s" placeholder="Я ищу...">
+                            <input id="search-input" class="search-show" type="search" name="s" placeholder="Я ищу...">
                             <button type="button">
                                 <img src="/img/search.svg" width="28" height="28" alt="">
                             </button>
+
+                            @@include('components/popovers/search-result/search-result.html')
                         </form>
 
                         <div class="header-actions">
-                            <button class="header-action m">
+                            <button class="header-action m" data-modal-open="search">
                                 <img src="/img/search-gray.svg" width="24" height="24" alt="Векторная иконка">
                             </button>
                             <button class="header-action filter">

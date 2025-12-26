@@ -15,12 +15,17 @@
 	pointer-events: none;
 	transition: opacity v.$tr ease, visibility v.$tr ease;
 	overflow-y: auto;
+	padding: 16px;
 	z-index: 100;
 
 	&-active {
 		opacity: 1;
 		visibility: visible;
 		pointer-events: auto;
+	}
+
+	.modal {
+		width: 100%;
 	}
 }
 
