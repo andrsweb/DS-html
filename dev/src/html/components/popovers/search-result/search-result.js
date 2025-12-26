@@ -17,7 +17,6 @@ const initSearchTest = () => {
 		if (!searchResults) return;
 
 		searchInput.addEventListener('focus', () => {
-			window.popoverManager.closeAllPopovers(searchResults);
 			searchResults.classList.add('showed');
 		});
 
