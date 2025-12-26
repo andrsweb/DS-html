@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const initPopoverManager = () => {
 	const closeAllPopovers = (currentPopover = null) => {
-		const popovers = document.querySelectorAll('[data-popover].showed');
+		const popovers = document.querySelectorAll('[data-popover].showed, [data-popover].opened');
 		const buttons = document.querySelectorAll('[data-popover-toggle].active');
 
 		popovers.forEach(popover => {
 			if (popover !== currentPopover) {
-				popover.classList.remove('showed');
+				popover.classList.remove('showed', 'opened');
 			}
 		});
 
@@ -24,10 +24,10 @@ const initPopoverManager = () => {
 
 	const togglePopover = (button, popover) => {
 		const isActive = button.classList.contains('active');
-		
+
 		if (isActive) {
 			button.classList.remove('active');
-			popover.classList.remove('showed');
+			popover.classList.remove('showed', 'opened');
 		} else {
 			closeAllPopovers(popover);
 			button.classList.add('active');
@@ -54,7 +54,7 @@ const initPopoverManager = () => {
 			const isClickInside = popover.contains(e.target) || button.contains(e.target);
 			if (!isClickInside) {
 				button.classList.remove('active');
-				popover.classList.remove('showed');
+				popover.classList.remove('showed', 'opened');
 			}
 		});
 	};
