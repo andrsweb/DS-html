@@ -27,7 +27,7 @@
                         <img src="/img/logo.png" width="101" height="50" alt="Логотип Dutch Seeds">
                     </a>
                     <div class="header-inner">
-                        <form class="header-search">
+                        <form class="header-search" data-popover="mobile-search">
                             <div class="header-search-input">
                                 <label for="search-input" class="sr-only">Поиск</label>
                                 <input id="search-input" class="search-show" type="search" name="s" placeholder="Я ищу...">
@@ -38,13 +38,13 @@
                             @@include('components/popovers/search-result/search-result.html')
                         </form>
                         <div class="header-actions">
-                            <button class="header-action m">
+                            <button class="header-action m" data-popover-toggle="mobile-search">
                                 <img src="/img/search-gray.svg" width="24" height="24" alt="Векторная иконка">
                             </button>
                             <button class="header-action filter">
                                 <img src="/img/filter.svg" width="24" height="24" alt="Векторная иконка">
                             </button>
-                            <button class="header-action color" id="call-cart">
+                            <button class="header-action color" id="call-cart" data-popover-toggle="shopping-cart">
                                 <img src="/img/shopping-cart.svg" width="24" height="24" alt="Векторная иконка">
                             </button>
                             <button class="header-action" id="lang">
