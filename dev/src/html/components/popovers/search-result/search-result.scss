@@ -29,19 +29,22 @@
 	}
 
 	&-card {
-		min-width: 220px;
+		min-width: 100%;
 		display: flex;
 		align-items: stretch;
 		gap: 10px;
-		padding: 8px;
+		padding: 8px 8px 10px 8px;
 		border-radius: v.$br4;
 		transition: background-color ease-in-out v.$tr;
+		border-bottom: 1px solid v.$c-light;
 
 		@include g.hover {
 			background-color: v.$c-light;
 		}
 
 		@media(min-width: v.$md) {
+			padding: 8px;
+			border-bottom: 0;
 			min-width: 290px;
 		}
 

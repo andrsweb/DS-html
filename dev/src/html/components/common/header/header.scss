@@ -347,7 +347,7 @@
 			position: relative;
 			left: auto;
 			top: auto;
-			transform: translateX(0);
+			transform: translateX(0) translateY(0);
 			gap: 0;
 			width: auto;
 			padding: 0;
@@ -361,6 +361,10 @@
 			opacity: 1;
 			visibility: visible;
 			transform: translateX(-50%) translateY(0);
+
+			@media(min-width: v.$lg) {
+				transform: translateX(0) translateY(0);
+			}
 		}
 
 		&-input {

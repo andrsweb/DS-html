@@ -1,3 +1,9 @@
+document.addEventListener('DOMContentLoaded', () => {
+	'use strict';
+
+	closeAllPopovers();
+})
+
 const closeAllPopovers = (currentPopover = null) => {
 	const popovers = document.querySelectorAll('.search-result.showed, .header-search.showed, .shopping-cart.opened');
 	const buttons = document.querySelectorAll('.header-action.active, #call-cart.active');
