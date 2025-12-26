@@ -1,44 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 	'use strict';
 
-	initShoppingCart();
-	shoppingCartActions()
+	shoppingCartActions();
 });
-
-const initShoppingCart = () => {
-	const button = document.getElementById('call-cart');
-	const cart = document.querySelector('.shopping-cart');
-
-	if (!button || !cart) return;
-
-	const toggleCart = (event) => {
-		event.stopPropagation();
-
-		if (button.classList.contains('active')) {
-			button.classList.remove('active');
-			cart.classList.remove('opened');
-		} else {
-			window.popoverManager.closeAllPopovers(cart);
-			button.classList.add('active');
-			cart.classList.add('opened');
-		}
-	};
-
-	const closeCart = () => {
-		cart.classList.remove('opened');
-		button.classList.remove('active');
-	};
-
-	button.addEventListener('click', toggleCart);
-
-	cart.addEventListener('click', (event) => {
-		event.stopPropagation();
-	});
-
-	document.addEventListener('click', () => {
-		closeCart();
-	});
-};
 
 const shoppingCartActions = () => {
 	const cart = document.querySelector('.shopping-cart');
