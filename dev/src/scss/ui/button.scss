@@ -77,3 +77,14 @@
 	}
 
 }
+
+@mixin activeButton {
+	background-image: url("/img/button-bg.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	img {
+		filter: invert(1) brightness(200%);
+	}
+}

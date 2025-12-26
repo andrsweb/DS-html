@@ -6,9 +6,11 @@
 	width: 100%;
 	min-height: 250px;
 	position: relative;
+	margin-top: 20px;
 
 	@media(min-width: v.$md) {
 		min-height: 410px;
+		margin-top: 0;
 	}
 
 	&-bg {

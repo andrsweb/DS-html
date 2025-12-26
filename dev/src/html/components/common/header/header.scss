@@ -2,6 +2,7 @@
 @use '../../../../scss/utils/placeholders/buttons/button' as *;
 @use '../../../../scss/ui/bg' as bg;
 @use '../../../../scss/mixins/global' as g;
+@use '../../../../scss/ui/button' as b;
 
 .header {
 	width: 100%;
@@ -325,7 +326,7 @@
 	}
 
 	&-search {
-		display: none;
+		display: flex;
 		flex-grow: 1;
 		background-color: v.$c-white;
 		padding: 16px;
@@ -336,10 +337,12 @@
 		top: 100%;
 		width: 100vw;
 		z-index: 99;
-		transform: translateX(-50%);
+		transform: translateX(-50%) translateY(-50%);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity ease-in-out v.$tr, opacity ease-in-out v.$tr;
 
 		@media(min-width: v.$lg) {
-			display: flex;
 			flex-direction: row;
 			position: relative;
 			left: auto;
@@ -349,10 +352,15 @@
 			width: auto;
 			padding: 0;
 			background-color: transparent;
+			opacity: 1;
+			visibility: visible;
 		}
 
 		&.showed {
 			display: flex;
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(-50%) translateY(0);
 		}
 
 		&-input {
@@ -448,15 +456,8 @@
 			}
 		}
 
-		&.color {
-			position: relative;
-			z-index: 1;
-
-			@include bg.button-bg;
-
-			&::after {
-				opacity: 1;
-			}
+		&.active {
+			@include b.activeButton;
 		}
 
 		@include g.hover {

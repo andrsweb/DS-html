@@ -17,6 +17,7 @@ const initSearchTest = () => {
 		if (!searchResults) return;
 
 		searchInput.addEventListener('focus', () => {
+			window.popoverManager.closeAllPopovers(searchResults);
 			searchResults.classList.add('showed');
 		});
 
@@ -44,13 +45,22 @@ const showMobileSearch = () => {
 
 	button.addEventListener('click', (e) => {
 		e.stopPropagation();
-		headerSearch.classList.toggle('showed');
+
+		if (button.classList.contains('active')) {
+			button.classList.remove('active');
+			headerSearch.classList.remove('showed');
+		} else {
+			window.popoverManager.closeAllPopovers(headerSearch);
+			button.classList.add('active');
+			headerSearch.classList.add('showed');
+		}
 	});
 
 	document.addEventListener('click', (e) => {
 		const isClickInside = headerSearch.contains(e.target) || button.contains(e.target);
 		if (!isClickInside) {
 			headerSearch.classList.remove('showed');
+			button.classList.remove('active');
 		}
 	});
 };

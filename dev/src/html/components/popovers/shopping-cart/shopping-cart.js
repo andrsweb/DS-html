@@ -13,11 +13,20 @@ const initShoppingCart = () => {
 
 	const toggleCart = (event) => {
 		event.stopPropagation();
-		cart.classList.toggle('opened');
+
+		if (button.classList.contains('active')) {
+			button.classList.remove('active');
+			cart.classList.remove('opened');
+		} else {
+			window.popoverManager.closeAllPopovers(cart);
+			button.classList.add('active');
+			cart.classList.add('opened');
+		}
 	};
 
 	const closeCart = () => {
 		cart.classList.remove('opened');
+		button.classList.remove('active');
 	};
 
 	button.addEventListener('click', toggleCart);
@@ -33,6 +42,7 @@ const initShoppingCart = () => {
 
 const shoppingCartActions = () => {
 	const cart = document.querySelector('.shopping-cart');
+
 	if (!cart) return;
 
 	const updateTotals = () => {
