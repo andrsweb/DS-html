@@ -36,6 +36,7 @@
 		@media(min-width: v.$md) {
 			flex-direction: row;
 			justify-content: flex-start;
+			flex-shrink: 0;
 		}
 
 		&-circle {
