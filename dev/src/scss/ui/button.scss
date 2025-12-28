@@ -26,6 +26,7 @@
 	&.borderless {
 		color: v.$c-black;
 		border-color: v.$c-light;
+		gap: 10px;
 		position: relative;
 
 		@include bg.button-bg;
