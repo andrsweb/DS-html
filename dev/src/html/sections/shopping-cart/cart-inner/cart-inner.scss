@@ -229,6 +229,17 @@
 					font-size: 14px;
 					line-height: v.$lh150;
 					margin-bottom: 6px;
+					transition: padding ease-in-out v.$tr, background-color ease-in-out v.$tr, color ease-in-out v.$tr,
+								border-radius ease-in-out v.$tr;
+
+					&.free {
+						text-transform: uppercase;
+						color: v.$c-white;
+						font-weight: v.$fw-700;
+						background-color: v.$c-accent;
+						padding: 4px;
+						border-radius: v.$br4;
+					}
 				}
 
 				a {
@@ -259,6 +270,11 @@
 					height: 100%;
 					background-color: #C8C9CB;
 					border-radius: 100px;
+					transition: width ease-in-out v.$tr, background-color ease-in-out v.$tr;
+
+					&.free {
+						background-color: v.$c-accent;
+					}
 				}
 			}
 
