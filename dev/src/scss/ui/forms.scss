@@ -1,0 +1,68 @@
+@use '../vars/vars' as v;
+
+.checkbox {
+	display: flex;
+	align-items: center;
+
+	input {
+		position: absolute;
+		visibility: hidden;
+		width: 1px;
+		height: 1px;
+	}
+
+	label {
+		display: flex;
+		align-items: center;
+		position: relative;
+		font-family: v.$ff;
+		font-weight: v.$fw-400;
+		font-size: 12px;
+		color: v.$c-gray;
+		cursor: pointer;
+
+		&::before, &::after {
+			content: '';
+			display: block;
+		}
+
+		&::before {
+			width: 20px;
+			height: 20px;
+			outline: 1px solid v.$c-light;
+			border-radius: v.$br4;
+			margin-right: 10px;
+
+			@media(min-width: v.$md) {
+				width: 30px;
+				height: 30px;
+			}
+		}
+
+		&::after {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 20px;
+			height: 20px;
+			background-color: v.$c-accent;
+			background-image: url('/img/check.svg');
+			background-size: 12px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			border-radius: v.$br4;
+			opacity: 0;
+			transition: opacity ease-in-out v.$tr;
+
+			@media(min-width: v.$md) {
+				width: 30px;
+				height: 30px;
+				background-size: 16px;
+			}
+		}
+
+		&:has(input:checked)::after {
+			opacity: 1;
+		}
+	}
+}
