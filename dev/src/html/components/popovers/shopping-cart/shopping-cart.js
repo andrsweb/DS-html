@@ -35,24 +35,28 @@ const shoppingCartActions = () => {
 	};
 
 	cart.addEventListener('click', event => {
-		const btn = event.target.closest('button');
+		const btn = event.target.closest('.counter button');
 
 		if (!btn) return;
 
-		if (btn.classList.contains('s-incr') || btn.classList.contains('s-decr')) {
-			const valueEl = btn.parentElement.querySelector('.value');
+		const counter = btn.closest('.counter');
+		const valueEl = counter?.querySelector('.value');
 
-			if (!valueEl) return;
+		if (!counter || !valueEl) return;
 
-			let qty = Number(valueEl.textContent) || 0;
-			qty += btn.classList.contains('s-incr') ? 1 : -1;
+		let qty = Number(valueEl.textContent) || 0;
 
+		if (btn.classList.contains('incr')) {
+			qty += 1;
+		} else if (btn.classList.contains('decr')) {
+			qty -= 1;
 			if (qty < 1) qty = 1;
-
-			valueEl.textContent = String(qty);
-
-			updateTotals();
+		} else {
+			return;
 		}
+
+		valueEl.textContent = String(qty);
+		updateTotals();
 	});
 
 	updateTotals();

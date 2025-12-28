@@ -146,63 +146,6 @@
 
 		&-bottom {
 			width: 100%;
-
-			.shopping-cart-card-actions {
-				display: flex;
-				align-items: center;
-
-				.s-decr, .s-incr {
-					width: 32px;
-					height: 32px;
-					padding: 0;
-					border-color: transparent;
-					transition: background-color ease-in-out v.$tr;
-
-					&:active {
-						background-color: v.$c-light;
-					}
-
-					span {
-						width: 12px;
-						height: 2px;
-						border-radius: v.$br4;
-						background-color: v.$c-black;
-						aspect-ratio: 1;
-					}
-				}
-
-				.value {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					width: 32px;
-					height: 32px;
-					border: 1px solid v.$c-light;
-					border-radius: v.$br4;
-					font-family: v.$ff;
-					font-weight: v.$fw-400;
-					color: v.$c-black;
-					font-size: 12px;
-					line-height: v.$lh150;
-				}
-
-				.s-incr {
-					span {
-						position: relative;
-
-						&::after {
-							content: '';
-							position: absolute;
-							left: 50%;
-							top: 50%;
-							transform: translate(-50%, -50%) rotate(90deg);
-							width: 100%;
-							height: 2px;
-							background-color: v.$c-black;
-						}
-					}
-				}
-			}
 		}
 	}
 
