@@ -59,6 +59,7 @@
 		@extend %button-base;
 
 		padding: 9px 12px;
+		gap: 10px;
 		border: 0;
 		color: v.$c-white;
 		border-radius: v.$br4;
@@ -73,6 +74,24 @@
 
 		@media(min-width: v.$md) {
 			padding: 15px 16px;
+		}
+
+		img {
+			width: 16px;
+			height: 16px;
+
+			@media(min-width: v.$md) {
+				width: 24px;
+				height: 24px;
+			}
+		}
+
+		&.sm {
+			padding: 5px 12px;
+
+			@media(min-width: v.$md) {
+				padding: 8px 15px;
+			}
 		}
 	}
 
