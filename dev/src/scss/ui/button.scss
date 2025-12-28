@@ -1,5 +1,6 @@
 @use '../vars/vars' as v;
 @use '../../scss/ui/bg' as bg;
+@use '../../scss/mixins/global' as g;
 @use '../utils/placeholders/buttons/button' as *;
 
 %button-base {
@@ -43,6 +44,45 @@
 			height: 50px;
 			padding: 0;
 			aspect-ratio: 1;
+		}
+
+		&.ico {
+			gap: 16px;
+			font-weight: v.$fw-300;
+
+			.button-img {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 34px;
+				height: 34px;
+				border-radius: 100%;
+				background-color: v.$c-light;
+				transition: background-color ease-in-out v.$tr;
+
+				img {
+					width: 16px;
+					height: 16px;
+				}
+			}
+
+			@include g.hover {
+				color: v.$c-white;
+
+				@include bg.button-bg;
+
+				&::after {
+					opacity: 1;
+				}
+
+				.button-img {
+					background-color: v.$c-white;
+				}
+			}
+
+			&:active {
+				opacity: v.$op;
+			}
 		}
 	}
 

@@ -1,48 +1,52 @@
 <div class="cart-card">
     <div class="cart-card-inner">
-        <div class="cart-card-left">
-            <div class="checkbox">
-                <label for="@@id">
-                    <input type="checkbox" id="@@id">
-                </label>
+        <div class="cart-card-box">
+            <div class="cart-card-left">
+                <div class="checkbox">
+                    <label for="@@id">
+                        <input type="checkbox" id="@@id">
+                    </label>
+                </div>
+                <div class="cart-card-img">
+                    <img src="/img/c1.jpg" width="94" height="81" alt="Изображение">
+                </div>
             </div>
-            <div class="cart-card-img">
-                <img src="/img/c1.jpg" width="94" height="81" alt="Изображение">
+            <div class="cart-card-right">
+                <div class="cart-card-right-top">
+                    <div class="cart-card-title">
+                        <div class="title-inner">
+                            <h4>Moonshine Cookies fem, </h4>
+                            <p>Dutch Bulk</p>
+                        </div>
+                        <span>3 семени</span>
+                    </div>
+                    <button class="button borderless sm">
+                        <img src="/img/delete-w.svg" width="24" height="24" alt="">
+                        <span>
+                         Удалить
+                    </span>
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="cart-card-right">
-            <div class="cart-card-right-top">
-                <div class="cart-card-title">
-                    <div class="title-inner">
-                        <h4>Moonshine Cookies fem, </h4>
-                        <p>Dutch Bulk</p>
-                    </div>
-                    <span>3 семени</span>
+        <div class="cart-card-bottom">
+            <div class="cart-card-items">
+                <div class="cart-card-item">
+                    <img src="/img/thc.svg" width="20" height="20" alt="Иконка">
+                    <p>30-33%</p>
                 </div>
-                <button class="button filled sm">
-                    <img src="/img/delete-w.svg" width="24" height="24" alt="">
-                    Удалить
-                </button>
+                <div class="cart-card-item">
+                    <p>Тип семян:</p><span>A</span>
+                </div>
+                <div class="cart-card-item">
+                    <img src="/img/height.svg" width="20" height="20" alt="Иконка">
+                    <p>70см</p>
+                </div>
             </div>
-            <div class="cart-card-bottom">
-                <div class="cart-card-items">
-                    <div class="cart-card-item">
-                        <img src="/img/thc.svg" width="20" height="20" alt="Иконка">
-                        <p>30-33%</p>
-                    </div>
-                    <div class="cart-card-item">
-                        <p>Тип семян:</p><span>A</span>
-                    </div>
-                    <div class="cart-card-item">
-                        <img src="/img/height.svg" width="20" height="20" alt="Иконка">
-                        <p>70см</p>
-                    </div>
-                </div>
-                @@include('components/actions/counter/counter.html', {"size": "md"})
-                <div class="cart-card-price">
-                    <span class="old-price">1200 р</span>
-                    <span class="new-price">1500 р</span>
-                </div>
+            @@include('components/actions/counter/counter.html', {"size": "md"})
+            <div class="cart-card-price">
+                <span class="old-price">1200 р</span>
+                <span class="new-price">1500 р</span>
             </div>
         </div>
     </div>
