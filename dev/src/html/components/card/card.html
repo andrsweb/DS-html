@@ -78,11 +78,7 @@
                     <button class="button borderless square">3</button>
                 </div>
                 <div class="card-bottom">
-                    <div class="card-counter">
-                        <button class="decr"><span></span></button>
-                        <span class="card-counter-value">1</span>
-                        <button class="incr"><span></span></button>
-                    </div>
+                    @@include('components/actions/counter/counter.html', {"size": "lg"})
                     <button class="button filled add">
                         Корзина
                     </button>
