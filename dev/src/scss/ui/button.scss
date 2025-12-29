@@ -135,7 +135,7 @@
 			}
 		}
 
-		&[disabled] {
+		&.disabled {
 			background-color: v.$c-light;
 			color: v.$c-gray;
 			pointer-events: none;
