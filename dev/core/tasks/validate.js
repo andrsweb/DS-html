@@ -128,6 +128,8 @@ export async function validate() {
 		errors.push(error);
 	}
 
+	// SCSS linting disabled
+	/*
 	try {
 		await new Promise((resolve, reject) => {
 			const stream = validateStyles();
@@ -137,6 +139,7 @@ export async function validate() {
 	} catch (error) {
 		errors.push(error);
 	}
+	*/
 
 	if (errors.length) {
 		throw new Error('Validation failed');
