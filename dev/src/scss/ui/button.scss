@@ -134,6 +134,16 @@
 				padding: 8px 15px;
 			}
 		}
+
+		&[disabled] {
+			background-color: v.$c-light;
+			color: v.$c-gray;
+			pointer-events: none;
+
+			&::after {
+				opacity: 0;
+			}
+		}
 	}
 
 }

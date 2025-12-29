@@ -1,64 +1,51 @@
 <section class="shopping-cart-inner">
     <h2 class="sr-only">
-        Ваша корзина пуста
+        Ваша корзина, 3 товара
     </h2>
     <div class="container">
-        <h3>Ваша корзина пуста</h3>
-        <div class="cart-items empty">
+        <div class="cart-heading">
+            <h3>Ваша корзина пуста</h3>
+        </div>
+        <div class="cart-form">
             <div class="cart-left">
                 <div class="cart-empty">
-                    <p class="cart-empty-text">
+                    <p>
                         Ваша корзина сейчас пуста, вернитесь в каталог.
                     </p>
-                    <button class="button borderless active">
+                    <a href="#" class="button filled">
                         Продолжить покупки
-                    </button>
+                    </a>
                 </div>
             </div>
             <div class="cart-right">
-               <aside class="cart-aside">
-                   <h4 class="cart-aside-title">Ваш заказ</h4>
-                   <div class="cart-aside-items">
-                       <div class="cart-aside-row">
-                           <span class="cart-aside-label">Товары (1):</span>
-                           <span class="cart-aside-value">1500 р</span>
-                       </div>
-                       <div class="cart-aside-progress-wrapper">
-                           <div class="cart-aside-progress">
-                               <div class="cart-aside-progress-track" style="{width: 40%;}"></div>
+               <div class="cart-right-inner">
+                   <div class="cart-right-empty">
+                       <p>Выберите товары для заказа</p>
+                       <span>А мы покажем, как работает доставка</span>
+                   </div>
+                   <div class="cart-right-inner-items">
+                       <div class="cart-right-inner-progress-wrapper">
+                           <div class="cart-right-inner-progress">
+                               <div class="cart-right-inner-progress-track" style="width: 40%;"></div>
                            </div>
                            <p>Бесплатная доставка при заказе от 6 000 р</p>
                            <a href="#">
                                Продолжить покупки
                            </a>
                        </div>
-                       <div class="cart-aside-row bold">
-                           <span class="cart-aside-label">Итого</span>
-                           <span class="cart-aside-value">1500 р</span>
+                       <div class="cart-right-inner-row bold">
+                           <span class="cart-right-inner-label">Итого</span>
+                           <span class="cart-right-inner-value">1500 р</span>
                        </div>
-                       <a href="#" class="button borderless active">
+                       <a href="#" class="button filled" disabled>
                            Оформление заказа
                            <span>|</span>
                            <span>
                                1 500 р
                            </span>
                        </a>
-                       <div class="cart-aside-payment">
-                           <div class="cart-aside-payment-item">
-                               <img src="/img/mastercard.svg" width="30" height="18" alt="Векторное изображение">
-                           </div>
-                           <div class="cart-aside-payment-item">
-                               <img src="/img/visa.svg" width="37" height="14" alt="Векторное изображение">
-                           </div>
-                           <div class="cart-aside-payment-item">
-                               <img src="/img/bitcoin.svg" width="20" height="20" alt="Векторное изображение">
-                           </div>
-                           <div class="cart-aside-payment-item">
-                               <img src="/img/interac.svg" width="20" height="20" alt="Векторное изображение">
-                           </div>
-                       </div>
                    </div>
-               </aside>
+               </div>
             </div>
         </div>
     </div>
