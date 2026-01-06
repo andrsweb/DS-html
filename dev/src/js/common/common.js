@@ -1,15 +1,16 @@
 import './modal';
-import { initTabsSliders } from '../tabsSlider.js';
-import { initProductCards } from './productCard.js';
+import {initTabsSliders} from '../tabsSlider.js';
+import {initProductCards} from './productCard.js';
 
 import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
 
 document.addEventListener("DOMContentLoaded", () => {
 	"use strict";
-		initBurgerMenu();
-		initLanguageSwitcher();
-		initTabsSliders();
-		initProductCards();
+	initBurgerMenu();
+	initLanguageSwitcher();
+	initTabsSliders();
+	initProductCards();
+	initPromoCopy();
 });
 
 const initBurgerMenu = () => {
@@ -127,27 +128,56 @@ const initBurgerMenu = () => {
 const initLanguageSwitcher = () => {
 	const langButton = document.getElementById('lang');
 	const body = document.body;
-	
+
 	if (!langButton || !body) return;
-	
+
 	const currentLang = localStorage.getItem('selectedLanguage') || 'ru';
 	body.setAttribute('data-lang', currentLang);
-	
+
 	const updateLangButton = (lang) => {
 		const span = langButton.querySelector('span');
 		if (span) {
 			span.textContent = lang === 'ru' ? 'EN' : 'RU';
 		}
 	};
-	
+
 	updateLangButton(currentLang);
-	
+
 	langButton.addEventListener('click', () => {
 		const currentLang = body.getAttribute('data-lang');
 		const newLang = currentLang === 'ru' ? 'en' : 'ru';
-		
+
 		body.setAttribute('data-lang', newLang);
 		localStorage.setItem('selectedLanguage', newLang);
 		updateLangButton(newLang);
+	});
+}
+
+const initPromoCopy = () => {
+	const promoButtons = document.querySelectorAll('[data-promo]');
+
+	promoButtons.forEach(button => {
+		button.addEventListener('click', () => {
+			const promoCode = button.getAttribute('data-promo');
+			if (promoCode) {
+				navigator.clipboard.writeText(promoCode).then(() => {
+					const originalContent = button.innerHTML;
+					const span = button.querySelector('span');
+
+					if (span) {
+						const originalSpanContent = span.innerHTML;
+						span.textContent = 'СКОПИРОВАНО!';
+						button.classList.add('copied');
+
+						setTimeout(() => {
+							span.innerHTML = originalSpanContent;
+							button.classList.remove('copied');
+						}, 2000);
+					}
+				}).catch(err => {
+					console.error('Failed to copy: ', err);
+				});
+			}
+		});
 	});
 }

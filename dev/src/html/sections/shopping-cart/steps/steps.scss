@@ -90,6 +90,13 @@
 				}
 			}
 		}
+
+		&.end {
+			.cart-step-circle {
+				background-color: v.$c-orange;
+				border-color: v.$c-orange;
+			}
+		}
 	}
 
 	.cart-step-line {
