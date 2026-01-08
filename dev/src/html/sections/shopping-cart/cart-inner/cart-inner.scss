@@ -274,11 +274,7 @@
 				transition: background-color ease-in-out v.$tr, transform ease-in-out v.$tr;
 
 				&.active {
-					background-color: v.$c-accent;
-
-					.cart-left-button-title, .cart-left-button-desc {
-						color: v.$c-white;
-					}
+					background-color: v.$c-gray-m;
 				}
 
 				&-img {
