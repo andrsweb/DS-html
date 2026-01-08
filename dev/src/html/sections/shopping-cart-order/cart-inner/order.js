@@ -3,19 +3,25 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 const initOrder = () => {
-	const deliveryButtons = document.querySelectorAll('.cart-left-button');
-	const deliveryInput = document.getElementById('delivery-method-input');
+	const initSelectGroup = (buttonSelector, inputSelector) => {
+		const buttons = document.querySelectorAll(buttonSelector);
+		const input = document.querySelector(inputSelector);
 
-	if (!deliveryButtons || !deliveryInput) return;
+		if (!buttons.length || !input) return;
 
-	deliveryButtons.forEach(button => {
-		button.addEventListener('click', (e) => {
-			e.preventDefault();
-			deliveryButtons.forEach(btn => btn.classList.remove('active'));
-			button.classList.add('active');
-			deliveryInput.value = button.dataset.select || '';
+		buttons.forEach(button => {
+			button.addEventListener('click', (e) => {
+				e.preventDefault();
+				buttons.forEach(btn => btn.classList.remove('active'));
+				button.classList.add('active');
+				input.value = button.dataset.select || '';
+			});
 		});
-	});
+	};
+
+	initSelectGroup('.cart-left-button', '#delivery-method-input');
+
+	initSelectGroup('.payment-button', '#payment-method-input');
 };
 
 export { initOrder };

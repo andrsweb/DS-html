@@ -380,6 +380,10 @@
 			border-radius: v.$br4;
 			outline: 1px solid v.$c-gray-m;
 
+			&.active {
+				background-color: v.$c-gray-m;
+			}
+
 			&-title {
 				font-family: v.$ff;
 				font-weight: v.$fw-400;
