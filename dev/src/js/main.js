@@ -4,3 +4,5 @@ import './tabsSlider';
 import '../html/components/popovers/shopping-cart/shopping-cart';
 import '../html/components/cart-card/cart-card';
 import '../html/components/popovers/search-result/search-result';
+import './dropdown';
+import './popover';
