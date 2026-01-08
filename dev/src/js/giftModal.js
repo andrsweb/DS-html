@@ -142,13 +142,17 @@ export const initGiftModal = () => {
             updateModalUI();
         }
 
-        const confirmBtn = target.closest('button');
-        if (confirmBtn && confirmBtn.textContent.trim() === 'Подтвердить') {
+        if (resetBtn && resetBtn.textContent.trim() === 'Подтвердить') {
             e.preventDefault();
             syncToMainCart();
 
-            const modalRoot = modal.closest('.modal-wrapper');
-            if (modalRoot) modalRoot.classList.remove('modal-wrapper-active');
+            const closeBtn = modal.querySelector('[data-modal-close]');
+            if (closeBtn) {
+                closeBtn.click();
+            } else {
+                const modalWrapper = modal.closest('.modal-wrapper');
+                if (modalWrapper) modalWrapper.classList.remove('modal-wrapper-active');
+            }
         }
     });
 
