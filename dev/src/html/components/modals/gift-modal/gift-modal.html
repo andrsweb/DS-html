@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="modal-tabs-buttons">
-            <button class="button borderless modal-tab-button active" type="button">
+            <button class="button borderless modal-tab-button active" type="button" data-tab="1">
                 Dutch Bulk
                 <span class="choosen">
                     <span class="current">0</span>
@@ -27,7 +27,7 @@
                     <span class="all">10</span>
                 </span>
             </button>
-            <button class="button borderless modal-tab-button" type="button">
+            <button class="button borderless modal-tab-button" type="button" data-tab="2">
                 Barneys Farm
                 <span class="choosen">
                     <span class="current">0</span>
@@ -35,7 +35,7 @@
                     <span class="all">10</span>
                 </span>
             </button>
-            <button class="button borderless modal-tab-button" type="button">
+            <button class="button borderless modal-tab-button" type="button" data-tab="3">
                 Seedsman
                 <span class="choosen">
                     <span class="current">0</span>
@@ -43,7 +43,7 @@
                     <span class="all">10</span>
                 </span>
             </button>
-            <button class="button borderless modal-tab-button" type="button">
+            <button class="button borderless modal-tab-button" type="button" data-tab="4">
                 Dutch Passion
                 <span class="choosen">
                     <span class="current">0</span>
@@ -53,18 +53,7 @@
             </button>
         </div>
         <div class="modal-tabs">
-            <div class="modal-tabs-content">
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-                @@include('components/modal-card/modal-card.html')
-            </div>
+            @@include('components/modals/gift-modal/tab-content.html')
         </div>
         <a href="#" class="v-more">Посмотреть еще</a>
         <div class="gift-modal-buttons">

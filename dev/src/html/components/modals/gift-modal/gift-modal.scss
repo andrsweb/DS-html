@@ -158,14 +158,18 @@
 			margin: 30px 0 16px;
 
 			&-content {
+				display: none;
 				width: 100%;
-				display: flex;
 				flex-wrap: wrap;
 				align-items: center;
 				gap: 20px;
 
 				@media(min-width: v.$xl) {
 					gap: 40px;
+				}
+
+				&.active {
+					display: flex;
 				}
 			}
 		}
