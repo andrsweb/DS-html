@@ -173,3 +173,26 @@
 		overflow: hidden;
 	}
 }
+
+textarea {
+	width: 100%;
+	min-height: 105px;
+	padding: 12px 16px;
+	border-radius: v.$br4;
+	background-color: v.$c-white;
+	border: 1px solid v.$c-gray-m;
+	font-family: v.$ff;
+	font-weight: v.$fw-300;
+	font-size: 12px;
+	line-height: v.$lh150;
+	color: v.$c-black;
+	resize: none;
+
+	&::placeholder {
+		font-family: v.$ff;
+		font-weight: v.$fw-300;
+		font-size: 12px;
+		line-height: v.$lh150;
+		color: v.$c-gray;
+	}
+}
