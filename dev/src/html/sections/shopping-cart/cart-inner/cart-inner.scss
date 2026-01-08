@@ -271,7 +271,7 @@
 				padding: 20px;
 				border-radius: v.$br4;
 				outline: 1px solid v.$c-gray-m;
-				transition: background-color ease-in-out v.$tr;
+				transition: background-color ease-in-out v.$tr, transform ease-in-out v.$tr;
 
 				&.active {
 					background-color: v.$c-accent;
