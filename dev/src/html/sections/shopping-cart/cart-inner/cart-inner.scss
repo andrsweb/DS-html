@@ -223,6 +223,127 @@
 		}
 	}
 
+	.cart-left-steps {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+
+		@media(min-width: v.$lg) {
+			max-width: 826px;
+		}
+	}
+
+	.cart-left-step {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+		padding: 20px;
+		border-radius: v.$br4;
+		background-color: v.$c-gray-l;
+
+		&:first-child {
+			.cart-left-step-title {
+				&:first-child {
+					padding-bottom: 20px;
+					border-bottom: 1px solid v.$c-gray-m;
+				}
+			}
+		}
+
+		&-inner {
+			width: 100%;
+		}
+
+		&-title {
+			display: block;
+			width: 100%;
+			font-family: v.$ff;
+			font-weight: v.$fw-500;
+			font-size: 20px;
+			line-height: v.$lh150;
+			color: v.$c-black;
+		}
+
+		&-inputs {
+			display: flex;
+			align-items: center;
+			gap: 20px;
+		}
+
+		.input-label {
+			font-family: v.$ff;
+			font-weight: v.$fw-400;
+			font-size: 12px;
+			line-height: v.$lh150;
+			color: v.$c-gray;
+			text-transform: uppercase;
+
+			.require {
+				color: v.$c-redwood;
+			}
+		}
+
+		.cart-left-select-wrapper {
+			width: 100%;
+			max-width: 243px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 6px;
+
+			.country-select {
+				width: 100%;
+				padding: 12px 16px;
+				border-radius: v.$br4;
+				background-color: v.$c-white;
+				border: 1px solid v.$c-gray-m;
+				cursor: pointer;
+				font-family: v.$ff;
+				font-weight: v.$fw-300;
+				font-size: 12px;
+				line-height: v.$lh150;
+				color: v.$c-gray;
+			}
+		}
+
+		&-input {
+			width: 100%;
+			flex-grow: 1;
+
+			label {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 6px;
+
+				input {
+					width: 100%;
+					padding: 12px 16px;
+					border-radius: v.$br4;
+					background-color: v.$c-white;
+					border: 1px solid v.$c-gray-m;
+					font-family: v.$ff;
+					font-weight: v.$fw-300;
+					font-size: 12px;
+					line-height: v.$lh150;
+					color: v.$c-gray;
+
+					&::placeholder {
+						font-family: v.$ff;
+						font-weight: v.$fw-300;
+						font-size: 12px;
+						line-height: v.$lh150;
+						color: v.$c-black;
+					}
+				}
+			}
+		}
+	}
+
 	.cart-right {
 		width: 100%;
 		padding: 20px 15px;
