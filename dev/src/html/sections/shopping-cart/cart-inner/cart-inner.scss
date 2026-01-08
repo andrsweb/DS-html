@@ -256,6 +256,64 @@
 
 		&-inner {
 			width: 100%;
+
+			.cart-left-buttons {
+				display: flex;
+				align-items: center;
+				gap: 20px 32px;
+			}
+
+			.cart-left-button {
+				width: calc(50% - 16px);
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				padding: 20px;
+				border-radius: v.$br4;
+				outline: 1px solid v.$c-gray-m;
+				transition: background-color ease-in-out v.$tr;
+
+				&.active {
+					background-color: v.$c-accent;
+
+					.cart-left-button-title, .cart-left-button-desc {
+						color: v.$c-white;
+					}
+				}
+
+				&-img {
+					width: 103px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-shrink: 0;
+				}
+
+				&-info {
+					width: 100%;
+					display: flex;
+					flex-grow: 1;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 5px;
+				}
+
+				&-title {
+					font-family: v.$ff;
+					font-weight: v.$fw-500;
+					font-size: 16px;
+					line-height: v.$lh150;
+					color: v.$c-black;
+				}
+
+				&-desc {
+					font-family: v.$ff;
+					font-weight: v.$fw-300;
+					font-size: 14px;
+					line-height: v.$lh150;
+					color: v.$c-gray;
+				}
+			}
 		}
 
 		&-title {
