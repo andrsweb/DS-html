@@ -90,6 +90,11 @@
 		align-items: flex-start;
 		gap: 6px;
 		position: relative;
+		font-family: v.$ff;
+		font-weight: v.$fw-300;
+		font-size: 12px;
+		line-height: v.$lh150;
+		color: v.$c-black;
 
 		input {
 			width: 100%;
