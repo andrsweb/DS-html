@@ -1,8 +1,9 @@
 import './modal';
-import {initTabsSliders} from '../tabsSlider.js';
-import {initProductCards} from './productCard.js';
+import { initTabsSliders } from '../tabsSlider.js';
+import { initProductCards } from './productCard.js';
+import { initGiftModal } from '../giftModal.js';
 
-import {disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks} from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 document.addEventListener("DOMContentLoaded", () => {
 	"use strict";
@@ -11,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initTabsSliders();
 	initProductCards();
 	initPromoCopy();
+	initGiftModal();
 });
 
 const initBurgerMenu = () => {

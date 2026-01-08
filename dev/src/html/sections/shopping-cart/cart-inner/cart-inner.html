@@ -4,7 +4,7 @@
     </h2>
     <div class="container">
         <div class="cart-heading">
-            <h3>Ваша корзина,  <span>3 товара</span></h3>
+            <h3>Ваша корзина, <span>3 товара</span></h3>
         </div>
         <div class="cart-form">
             <div class="cart-left">
@@ -18,14 +18,15 @@
                         </div>
                     </div>
                     <div class="cart-left-middle">
-                    @@include('components/cart-card/cart-card.html', {"id": "1"})
-                    @@include('components/cart-card/cart-card.html', {"id": "2"})
-                    @@include('components/cart-card/cart-card.html', {"id": "3"})
+                        @@include('components/cart-card/cart-card.html', {"id": "1"})
+                        @@include('components/cart-card/cart-card.html', {"id": "2"})
+                        @@include('components/cart-card/cart-card.html', {"id": "3"})
                     </div>
                     <div class="cart-left-bottom">
                         <div class="cart-left-promo">
                             <p>
-                                За каждые 1 500 руб вы можете выбрать 1 семку в подарок либо получить промокод 4% на будущие покупки
+                                За каждые 1 500 руб вы можете выбрать 1 семку в подарок либо получить промокод 4% на
+                                будущие покупки
                             </p>
                             <div class="cart-left-buttons">
                                 <button class="button borderless ico" type="button" data-modal-open="gift">
@@ -42,58 +43,67 @@
                                 </button>
                             </div>
                         </div>
+                        <div class="cart-left-chosen choosen-wrapper" id="cart-selected-gifts">
+                            <span class="choosen-title type-2">
+                                Выбранные семена
+
+                                <button class="v-more" data-modal-open="gift">Изменить</button>
+                            </span>
+                            <div class="choosen-items"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="cart-right">
-               <div class="cart-right-inner">
-                   <h4>Ваш заказ</h4>
-                   <div class="cart-right-inner-items">
-                       <div class="cart-right-inner-row">
-                           <span class="cart-right-inner-label">Товары (1):</span>
-                           <span class="cart-right-inner-value">1500 р</span>
-                       </div>
-                       <div class="cart-right-inner-progress-wrapper">
-                           <div class="cart-right-inner-progress">
-                               <div class="cart-right-inner-progress-track" style="width: 40%;"></div>
-                           </div>
-                           <p>Бесплатная доставка при заказе от 6 000 р</p>
-                           <a href="#">
-                               Продолжить покупки
-                           </a>
-                       </div>
-                       <div class="cart-right-inner-row bold">
-                           <span class="cart-right-inner-label">Итого</span>
-                           <span class="cart-right-inner-value">1500 р</span>
-                       </div>
-                       <a href="#" class="button filled">
-                           Оформление заказа
-                           <span>|</span>
-                           <span>
-                               1 500 р
-                           </span>
-                       </a>
-                       <div class="cart-right-inner-payment">
-                           <div class="cart-right-payment-wrapper">
-                               <p>способы оплаты</p>
-                               <div class="cart-right-payment-items">
-                                   <div class="cart-right-inner-payment-item">
-                                       <img src="/img/mastercard.svg" width="30" height="18" alt="Векторное изображение">
-                                   </div>
-                                   <div class="cart-right-inner-payment-item">
-                                       <img src="/img/visa.svg" width="37" height="14" alt="Векторное изображение">
-                                   </div>
-                                   <div class="cart-right-inner-payment-item">
-                                       <img src="/img/bitcoin.svg" width="20" height="20" alt="Векторное изображение">
-                                   </div>
-                                   <div class="cart-right-inner-payment-item">
-                                       <img src="/img/interac.svg" width="20" height="20" alt="Векторное изображение">
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-                   </div>
-               </div>
+                <div class="cart-right-inner">
+                    <h4>Ваш заказ</h4>
+                    <div class="cart-right-inner-items">
+                        <div class="cart-right-inner-row">
+                            <span class="cart-right-inner-label">Товары (1):</span>
+                            <span class="cart-right-inner-value">1500 р</span>
+                        </div>
+                        <div class="cart-right-inner-progress-wrapper">
+                            <div class="cart-right-inner-progress">
+                                <div class="cart-right-inner-progress-track" style="width: 40%;"></div>
+                            </div>
+                            <p>Бесплатная доставка при заказе от 6 000 р</p>
+                            <a href="#">
+                                Продолжить покупки
+                            </a>
+                        </div>
+                        <div class="cart-right-inner-row bold">
+                            <span class="cart-right-inner-label">Итого</span>
+                            <span class="cart-right-inner-value">1500 р</span>
+                        </div>
+                        <a href="#" class="button filled">
+                            Оформление заказа
+                            <span>|</span>
+                            <span>
+                                1 500 р
+                            </span>
+                        </a>
+                        <div class="cart-right-inner-payment">
+                            <div class="cart-right-payment-wrapper">
+                                <p>способы оплаты</p>
+                                <div class="cart-right-payment-items">
+                                    <div class="cart-right-inner-payment-item">
+                                        <img src="/img/mastercard.svg" width="30" height="18"
+                                            alt="Векторное изображение">
+                                    </div>
+                                    <div class="cart-right-inner-payment-item">
+                                        <img src="/img/visa.svg" width="37" height="14" alt="Векторное изображение">
+                                    </div>
+                                    <div class="cart-right-inner-payment-item">
+                                        <img src="/img/bitcoin.svg" width="20" height="20" alt="Векторное изображение">
+                                    </div>
+                                    <div class="cart-right-inner-payment-item">
+                                        <img src="/img/interac.svg" width="20" height="20" alt="Векторное изображение">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

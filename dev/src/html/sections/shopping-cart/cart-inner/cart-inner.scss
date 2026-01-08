@@ -17,7 +17,8 @@
 			margin-bottom: 40px;
 		}
 
-		h3, span {
+		h3,
+		span {
 			font-family: v.$ff;
 			font-size: 20px;
 			line-height: 44px;
@@ -201,6 +202,14 @@
 			flex-direction: column;
 			align-items: flex-start;
 			gap: 20px;
+
+			.choosen-wrapper {
+				display: none;
+
+				&.active {
+					display: flex;
+				}
+			}
 		}
 
 		&-buttons {
@@ -625,7 +634,8 @@
 				justify-content: space-between;
 			}
 
-			&-label, &-value {
+			&-label,
+			&-value {
 				max-width: 50%;
 				font-family: v.$ff;
 				color: v.$c-black;
@@ -669,7 +679,7 @@
 					line-height: v.$lh150;
 					margin-bottom: 6px;
 					transition: padding ease-in-out v.$tr, background-color ease-in-out v.$tr, color ease-in-out v.$tr,
-								border-radius ease-in-out v.$tr;
+						border-radius ease-in-out v.$tr;
 
 					&.free {
 						text-transform: uppercase;
@@ -873,7 +883,8 @@
 			gap: 16px;
 			justify-content: space-between;
 
-			&-label, &-value {
+			&-label,
+			&-value {
 				max-width: 50%;
 				font-family: v.$ff;
 				color: v.$c-black;
@@ -940,10 +951,6 @@
 				img {
 					width: 40px;
 					height: 40px;
-
-					@media(min-width: v.$md) {
-
-					}
 				}
 
 				span {
