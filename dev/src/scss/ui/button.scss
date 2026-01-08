@@ -96,6 +96,24 @@
 		padding: 13px 26px;
 	}
 
+	&.gray {
+		font-family: v.$ff;
+		font-size: 12px;
+		line-height: v.$lh150;
+		background-color: v.$c-gray-m;
+		color: v.$c-black;
+		padding: 8px 16px;
+
+		@media(min-width: v.$md) {
+			padding: 13px 26px;
+			font-size: 16px;
+		}
+
+		&.active {
+			background-color: v.$c-orange;
+		}
+	}
+
 	&.filled {
 		@extend %button-base;
 

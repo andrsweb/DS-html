@@ -28,7 +28,7 @@
                                 За каждые 1 500 руб вы можете выбрать 1 семку в подарок либо получить промокод 4% на будущие покупки
                             </p>
                             <div class="cart-left-buttons">
-                                <button class="button borderless ico" type="button">
+                                <button class="button borderless ico" type="button" data-modal-open="gift">
                                     <span class="button-img">
                                         <img src="/img/seed.svg" width="16" height="16" alt="Иконка">
                                     </span>
@@ -97,4 +97,6 @@
             </div>
         </div>
     </div>
+
+    @@include('components/modals/gift-modal/gift-modal.html')
 </section>

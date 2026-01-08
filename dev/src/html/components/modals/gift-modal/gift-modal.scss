@@ -1,0 +1,268 @@
+@use '../../../../scss/vars/vars' as v;
+@use '../../../../scss/mixins/global' as g;
+@use '../../../../scss/utils/placeholders/buttons/button' as *;
+
+.gift-modal {
+	.modal {
+		width: 100%;
+		max-width: 1500px;
+		background-color: v.$c-white;
+		padding: 10px;
+		border-radius: v.$br4;
+		position: relative;
+
+		@media(min-width: v.$md) {
+			padding: 50px;
+		}
+
+		&-close {
+			@extend %button;
+
+			width: 24px;
+			height: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			right: 20px;
+			top: 20px;
+
+			@media(min-width: v.$md) {
+				width: 46px;
+				height: 46px;
+			}
+
+			span {
+				width: 100%;
+				height: 1px;
+				background-color: v.$c-black;
+				position: relative;
+				transform: rotate(45deg);
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%) rotate(90deg);
+					width: 100%;
+					height: 1px;
+					background-color: v.$c-black;
+				}
+			}
+		}
+
+		&-top {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 24px;
+
+			@media(min-width: v.$md) {
+				gap: 60px;
+			}
+
+			.title-group {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 10px;
+				max-width: 80%;
+
+				@media(min-width: v.$md) {
+					gap: 24px;
+				}
+
+				h3 {
+					display: flex;
+					flex-direction: column;
+					gap: 4px;
+					font-family: v.$ff;
+					font-weight: v.$fw-700;
+					font-size: 20px;
+					color: v.$c-black;
+
+					@media(min-width: v.$md) {
+						font-size: 36px;
+					}
+
+					@media(min-width: v.$xl) {
+						flex-direction: row;
+						align-items: center;
+					}
+
+					span {
+						color: v.$c-accent;
+						font-weight: v.$fw-300;
+					}
+				}
+
+				h4 {
+					font-family: v.$ff;
+					font-weight: v.$fw-700;
+					font-size: 16px;
+					color: v.$c-black;
+
+					@media(min-width: v.$md) {
+						font-size: 32px;
+					}
+				}
+
+				p {
+					font-family: v.$ff;
+					font-weight: v.$fw-400;
+					font-size: 16px;
+					color: v.$c-gray;
+
+					a {
+						color: v.$c-accent;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		&-tabs-buttons {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 8px;
+			margin-top: 30px;
+			padding-bottom: 30px;
+			border-bottom: 1px solid v.$c-gray-m;
+
+			@media(min-width: v.$md) {
+				gap: 20px;
+			}
+
+			.modal-tab-button {
+				&.active {
+					.choosen {
+						color: v.$c-orange;
+					}
+				}
+
+				.choosen {
+					display: flex;
+					align-items: center;
+					gap: 4px;
+					font-weight: v.$fw-700;
+				}
+			}
+		}
+
+		&-tabs {
+			width: 100%;
+			margin: 30px 0 16px;
+
+			&-content {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 20px;
+
+				@media(min-width: v.$xl) {
+					gap: 40px;
+				}
+			}
+		}
+	}
+
+	&-buttons {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 10px;
+		margin-top: 20px;
+
+		@media(min-width: v.$md) {
+			gap: 20px;
+			margin-top: 40px;
+		}
+	}
+
+	.choosen-wrapper {
+		margin-top: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+
+		@media(min-width: v.$md) {
+			margin-top: 50px;
+			gap: 27px;
+		}
+	}
+
+	.choosen-items {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+
+		@media(min-width: v.$md) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+	}
+
+	.choosen-title {
+		font-family: v.$ff;
+		font-weight: v.$fw-700;
+		font-size: 16px;
+		color: v.$c-black;
+
+		@media(min-width: v.$md) {
+			font-size: 32px;
+		}
+	}
+
+	.choosen-item {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+		padding: 16px;
+		border: 1px solid v.$c-gray-m;
+		border-radius: v.$br4;
+
+		@media(min-width: v.$md) {
+			padding: 20px;
+		}
+
+		p {
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			font-size: 16px;
+			color: v.$c-black;
+		}
+
+		span {
+			font-family: v.$ff;
+			font-weight: v.$fw-700;
+			font-size: 14px;
+			color: v.$c-accent;
+		}
+	}
+
+	&-actions {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: flex-start;
+		margin-top: 20px;
+		gap: 10px;
+
+		@media(min-width: v.$md) {
+			gap: 20px;
+			margin-top: 40px;
+		}
+	}
+}
