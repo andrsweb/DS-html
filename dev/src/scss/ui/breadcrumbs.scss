@@ -1,0 +1,36 @@
+@use '../vars/vars' as v;
+
+.breadcrumbs {
+	&-inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 7px;
+		margin: 30px 0;
+	}
+
+	.prev {
+		font-family: v.$ff;
+		font-weight: v.$fw-300;
+		color: v.$c-gray;
+		font-size: 13px;
+		line-height: v.$lh150;
+	}
+
+	.separator {
+		display: block;
+		width: 10px;
+		height: 1px;
+		background-color: v.$c-gray;
+		border-radius: v.$br4;
+	}
+
+	.current {
+		font-family: v.$ff;
+		font-weight: v.$fw-500;
+		color: v.$c-accent;
+		font-size: 13px;
+		line-height: v.$lh150;
+		text-decoration: underline;
+	}
+}

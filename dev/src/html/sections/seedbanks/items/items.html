@@ -1,0 +1,17 @@
+<section class="seedbanks">
+    <div class="container">
+        <div class="seedbanks-wrapper">
+            <h1 class="h1">Сидбанки</h1>
+            <div class="seedbanks-items">
+                @@for (var i = 0; i < 36; i++) {
+                    @@include('sections/seedbanks/items/item.html')
+                }
+            </div>
+            <div class="link-wrapper">
+                <a href="#" class="v-more">
+                    Посмотреть ещё
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
