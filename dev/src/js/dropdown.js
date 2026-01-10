@@ -9,9 +9,14 @@ const toogleDropdown = () => {
 
 	if (!dropdowns.length) return
 
-	dropdowns.forEach(dropdown => {
-		if (dropdown.classList.contains('opened'))
-			reCalculateDropdownHeight(dropdown)
+	window.addEventListener('load', () => {
+		dropdowns.forEach(dropdown => {
+			if (dropdown.classList.contains('opened')) {
+				setTimeout(() => {
+					reCalculateDropdownHeight(dropdown)
+				}, 500)
+			}
+		})
 	})
 
 	dropdowns.forEach(dropdown => {
