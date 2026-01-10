@@ -1,12 +1,8 @@
-@use '../utils/placeholders/buttons/button' as *;
-
 .dropdown {
 	width: 100%;
 	cursor: pointer;
 
 	&-start {
-		@extend %button;
-
 		width: 100%;
 	}
 
