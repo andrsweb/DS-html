@@ -1,107 +1,107 @@
 @use '../../../scss/vars/vars' as v;
 
 .range-input {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
 
-    &-values {
-        display: flex;
-        gap: 12px;
-        width: 100%;
-    }
+	&-values {
+		display: flex;
+		gap: 12px;
+		width: 100%;
+	}
 
-    &-value {
-        flex: 1;
+	&-value {
+		flex: 1;
 
-        input {
-            width: 100%;
-            height: 42px;
-            padding: 12px 16px;
-            border-radius: v.$br4;
-            background-color: v.$c-white;
-            border: 1px solid v.$c-gray-m;
-            font-family: v.$ff;
-            font-weight: v.$fw-400;
-            font-size: 14px;
-            line-height: v.$lh150;
-            color: v.$c-black;
-            text-align: center;
-            cursor: default;
+		input {
+			width: 100%;
+			height: 42px;
+			padding: 12px 16px;
+			border-radius: v.$br4;
+			background-color: v.$c-white;
+			border: 1px solid v.$c-gray-m;
+			font-family: v.$ff;
+			font-weight: v.$fw-400;
+			font-size: 14px;
+			line-height: v.$lh150;
+			color: v.$c-black;
+			text-align: center;
+			cursor: default;
 
-            &:focus {
-                outline: none;
-            }
-        }
-    }
+			&:focus {
+				outline: none;
+			}
+		}
+	}
 }
 
 .range-wrapper {
-    margin: 0 10px;
+	margin: 0 10px;
 	padding: 0 10px;
-    height: 2px;
+	height: 2px;
 }
 
 .range-input {
-    .noUi-target {
-        background: v.$c-gray-m;
-        border: none;
-        box-shadow: none;
-        height: 2px;
-        margin: 10px 0;
-    }
+	.noUi-target {
+		background: v.$c-gray-m;
+		border: none;
+		box-shadow: none;
+		height: 2px;
+		margin: 10px 0;
+	}
 
-    .noUi-connect {
-        background: v.$c-accent;
-    }
+	.noUi-connect {
+		background: v.$c-accent;
+	}
 
-    .noUi-handle {
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: v.$c-accent;
-        border: none;
-        box-shadow: none;
-        cursor: pointer;
-        top: -8px;
-        right: -9px;
-        transition: transform 0.2s ease;
+	.noUi-handle {
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		background: v.$c-accent;
+		border: none;
+		box-shadow: none;
+		cursor: pointer;
+		top: -8px;
+		right: -9px;
+		transition: transform 0.2s ease;
 
-        &::before {
-            content: '';
-            display: block !important;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 6px;
-            height: 6px;
-            background-color: v.$c-white;
-            border-radius: 50%;
-        }
+		&::before {
+			content: '';
+			display: block !important;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 8px;
+			height: 8px;
+			background-color: v.$c-white;
+			border-radius: 50%;
+		}
 
-        &::after {
-            display: none !important;
-        }
+		&::after {
+			display: none !important;
+		}
 
-        &:hover,
-        &:active {
-            transform: scale(1.1);
-        }
+		&:hover,
+		&:active {
+			transform: scale(1.1);
+		}
 
-        &:focus {
-            outline: none;
-        }
-    }
+		&:focus {
+			outline: none;
+		}
+	}
 
-    .noUi-horizontal .noUi-handle {
-        width: 18px;
-        height: 18px;
-        right: -9px;
-    }
+	.noUi-horizontal .noUi-handle {
+		width: 20px;
+		height: 20px;
+		right: -10px;
+	}
 
-    .noUi-base {
-        height: 100%;
-    }
+	.noUi-base {
+		height: 100%;
+	}
 }
