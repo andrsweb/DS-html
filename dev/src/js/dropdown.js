@@ -53,5 +53,6 @@ export const reCalculateDropdownHeight = dropdown => {
 
 	if (!dropdownOpen || !dropdownInner) return
 
-	dropdownOpen.style.height = `${dropdownInner.getBoundingClientRect().height}px`
+	// Use scrollHeight for more accurate content measurement
+	dropdownOpen.style.height = `${dropdownInner.scrollHeight}px`
 }

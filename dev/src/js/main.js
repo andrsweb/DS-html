@@ -17,3 +17,4 @@ import './categoryLinks';
 import './sort';
 import './readMore';
 import './filters';
+import './mobileFilter';

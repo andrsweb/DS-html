@@ -1,16 +1,90 @@
 @use '../../../../scss/vars/vars' as v;
-@use '../../../../scss/mixins/global' as g;
+@use '../../../../scss/utils/placeholders/buttons/button' as *;
+
 
 .category-aside {
-	width: 341px;
+	width: 100%;
 	height: 100%;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	align-items: flex-start;
 	flex-shrink: 0;
 	border: 1px solid v.$c-gray-m;
 	border-radius: v.$br4;
-	padding: 20px;
+	padding: 40px 20px;
+	background-color: v.$c-white;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	overflow-y: auto;
+
+	&.opened {
+		display: flex;
+	}
+
+	@media(min-width: v.$lg) {
+		position: static;
+		display: flex;
+		width: 341px;
+		padding: 20px;
+	}
+
+	.aside-mobile {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		justify-content: space-between;
+
+		@media(min-width: v.$lg) {
+			display: none;
+		}
+
+		span {
+			font-family: v.$ff;
+			font-weight: v.$fw-500;
+			font-size: 20px;
+			line-height: v.$lh130;
+			color: v.$c-black;
+		}
+
+		.close-filter {
+			@extend %button;
+
+			width: 24px;
+			height: 24px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			@media(min-width: v.$md) {
+				width: 46px;
+				height: 46px;
+			}
+
+			span {
+				width: 100%;
+				height: 1px;
+				background-color: v.$c-black;
+				position: relative;
+				transform: rotate(45deg);
+
+				&::after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%) rotate(90deg);
+					width: 100%;
+					height: 1px;
+					background-color: v.$c-black;
+				}
+			}
+		}
+	}
+
+
 
 	&-inner {
 		width: 100%;
