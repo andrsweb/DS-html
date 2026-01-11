@@ -50,6 +50,23 @@
 			line-height: v.$lh150;
 			color: v.$c-gray;
 		}
+
+		.read-more {
+			@extend %button;
+
+			display: none;
+			font-family: v.$ff;
+			font-weight: v.$fw-400;
+			font-size: 16px;
+			line-height: v.$lh150;
+			color: v.$c-gray;
+			cursor: pointer;
+			text-decoration: underline;
+
+			&.is-visible {
+				display: flex;
+			}
+		}
 	}
 
 	.category-links {
