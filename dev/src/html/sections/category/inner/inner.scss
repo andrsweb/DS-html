@@ -59,6 +59,8 @@
 			padding: 6px;
 			border: 1px solid v.$c-accent;
 			border-radius: v.$br4;
+			aspect-ratio: 1;
+			flex-shrink: 0;
 
 			@media(min-width: v.$md) {
 				width: 165px;
