@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const initRangeInputs = () => {
 	const rangeInputs = document.querySelectorAll('.range-input');
+	const resetBtn = document.querySelector('.js-reset-filters');
 
 	rangeInputs.forEach(container => {
 		const wrapper = container.querySelector('.range-wrapper');
@@ -14,17 +15,28 @@ const initRangeInputs = () => {
 
 		if (!wrapper || !inputMin || !inputMax) return;
 
+		const id = wrapper.dataset.id;
 		const min = parseFloat(wrapper.dataset.min) || 0;
 		const max = parseFloat(wrapper.dataset.max) || 100;
 		const step = parseFloat(wrapper.dataset.step) || 1;
 		const unit = wrapper.dataset.unit || '';
+
+		let startValues = [min, max];
+		const saved = localStorage.getItem(`range-${id}`);
+		if (saved) {
+			try {
+				startValues = JSON.parse(saved);
+			} catch (e) {
+				console.error('Error parsing range data from localStorage', e);
+			}
+		}
 
 		if (wrapper.noUiSlider) {
 			wrapper.noUiSlider.destroy();
 		}
 
 		noUiSlider.create(wrapper, {
-			start: [min, max],
+			start: startValues,
 			connect: true,
 			step: step,
 			range: {
@@ -41,5 +53,16 @@ const initRangeInputs = () => {
 				inputMax.value = value + unit;
 			}
 		});
+
+		wrapper.noUiSlider.on('change', (values) => {
+			localStorage.setItem(`range-${id}`, JSON.stringify(values.map(v => parseFloat(v))));
+		});
+
+		if (resetBtn) {
+			resetBtn.addEventListener('click', () => {
+				wrapper.noUiSlider.set([min, max]);
+				localStorage.removeItem(`range-${id}`);
+			});
+		}
 	});
 }
