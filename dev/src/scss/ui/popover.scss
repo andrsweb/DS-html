@@ -1,0 +1,54 @@
+@use '../vars/vars' as v;
+
+.popover {
+    position: absolute;
+    z-index: 100;
+    display: none;
+    background-color: v.$c-white;
+    border: 1px solid v.$c-gray-m;
+    border-radius: v.$br4;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 10px 0;
+    min-width: 180px;
+
+    &.showed,
+    &.opened {
+        display: block;
+    }
+
+    &-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-item {
+        padding: 10px 24px;
+        font-family: v.$ff;
+        font-weight: v.$fw-300;
+        font-size: 14px;
+        line-height: v.$lh150;
+        color: v.$c-gray;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: background-color v.$tr, color v.$tr;
+
+        &:hover {
+            background-color: rgba(v.$c-accent, 0.05);
+            color: v.$c-accent;
+        }
+
+        &.active {
+            background-color: rgba(v.$c-accent, 0.1);
+            color: v.$c-accent;
+            font-weight: v.$fw-500;
+        }
+    }
+}
+
+.sort-popover {
+    top: calc(100% + 5px);
+    right: 0;
+}

@@ -14,3 +14,4 @@ import './dropdown';
 import './popover';
 import '../html/components/range-input/range-input';
 import './categoryLinks';
+import './sort';
