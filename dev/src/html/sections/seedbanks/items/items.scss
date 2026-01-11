@@ -29,18 +29,25 @@
 	}
 
 	&-item {
-		flex: 1 1 calc(100% / 2 - 10px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: calc(100% / 2 - 10px);
 		padding: 14px;
 		border: 1px solid v.$c-accent;
 		border-radius: v.$br4;
 		transition: background-color ease-in-out v.$tr;
 
+		@media (min-width: v.$sm) {
+			width: calc(100% / 3 - 7px);
+		}
+
 		@media (min-width: v.$md) {
-			flex: 1 1 calc(100% / 4 - 15px);
+			width: calc(100% / 4 - 15px);
 		}
 
 		@media (min-width: v.$lg) {
-			flex: 1 1 calc(100% / 6 - 25px);
+			width: calc(100% / 6 - 25px);
 			padding: 27px 14px 10px 14px;
 		}
 
