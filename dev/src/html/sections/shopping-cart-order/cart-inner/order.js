@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 	'use strict';
+
+	initOrder();
 })
 
 const initOrder = () => {
@@ -23,5 +25,3 @@ const initOrder = () => {
 
 	initSelectGroup('.payment-button', '#payment-method-input');
 };
-
-export { initOrder };
