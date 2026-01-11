@@ -164,6 +164,11 @@
 		transition: opacity ease-in-out v.$tr;
 	}
 
+	.radio-value {
+		color: v.$c-accent;
+		font-weight: v.$fw-300;
+	}
+
 	&:has(input[type="radio"]:checked)::after {
 		opacity: 1;
 	}

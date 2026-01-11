@@ -12,3 +12,4 @@ document.addEventListener('DOMContentLoaded', () => {
 import '../html/components/popovers/search-result/search-result';
 import './dropdown';
 import './popover';
+import '../html/components/range-input/range-input';

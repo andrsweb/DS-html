@@ -1,0 +1,165 @@
+@use '../../../../scss/vars/vars' as v;
+@use '../../../../scss/utils/placeholders/buttons/button' as *;
+
+.category-wrapper {
+	width: 100%;
+}
+
+.category-inner {
+	width: 100%;
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
+}
+
+.category-items {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+
+	&-top {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 50px;
+		padding-bottom: 30px;
+		border-bottom: 1px solid v.$c-gray-m;
+	}
+
+	.category-title {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+
+		h3 {
+			font-family: v.$ff;
+			font-weight: v.$fw-700;
+			font-size: 36px;
+			line-height: v.$lh150;
+			color: v.$c-black;
+		}
+
+		p {
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			font-size: 16px;
+			line-height: v.$lh150;
+			color: v.$c-gray;
+		}
+	}
+
+	.category-links {
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: 16px;
+
+		&-items {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: 16px;
+		}
+
+		.show-more {
+			display: flex;
+			align-items: center;
+			flex-shrink: 0;
+			gap: 8px;
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			font-size: 16px;
+			line-height: v.$lh150;
+			color: v.$c-gray;
+
+			img {
+				width: 10px;
+				height: 24px;
+			}
+		}
+	}
+
+	h3 {
+		font-family: v.$ff;
+		font-weight: v.$fw-500;
+		font-size: 36px;
+		line-height: v.$lh130;
+		color: v.$c-black;
+	}
+
+	.category-cards {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 40px;
+
+		&-panel {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			margin-top: 30px;
+
+			.sort {
+				@extend %button;
+
+				display: flex;
+				align-items: center;
+				gap: 8px;
+
+
+				&-inner {
+					display: flex;
+					align-items: center;
+					gap: 8px;
+				}
+
+				&-title {
+					font-family: v.$ff;
+					font-weight: v.$fw-500;
+					font-size: 16px;
+					line-height: v.$lh150;
+					color: v.$c-gray;
+				}
+
+				&-value {
+					font-family: v.$ff;
+					font-weight: v.$fw-300;
+					font-size: 16px;
+					line-height: v.$lh150;
+					color: v.$c-gray;
+				}
+			}
+		}
+
+		&-items {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: stretch;
+			gap: 60px 20px;
+
+			.card {
+				width: 100%;
+
+				@media(min-width: v.$sm) {
+					width: calc(100% / 2 - 10px);
+				}
+
+				@media(min-width: v.$md) {
+					width: calc(100% / 2 - 17px);
+				}
+
+				@media(min-width: v.$xl) {
+					width: calc(100% / 3 - 14px);
+				}
+			}
+		}
+	}
+}

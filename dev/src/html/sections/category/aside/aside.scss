@@ -1,0 +1,97 @@
+@use '../../../../scss/vars/vars' as v;
+@use '../../../../scss/mixins/global' as g;
+
+.category-aside {
+	width: 341px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-shrink: 0;
+	border: 1px solid v.$c-gray-m;
+	border-radius: v.$br4;
+	padding: 20px;
+
+	&-inner {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 30px;
+	}
+
+	&-dropdown {
+		width: 100%;
+		border-bottom: 1px solid v.$c-gray-m;
+		padding-bottom: 30px;
+
+		&.opened {
+			.dropdown-start {
+				margin-bottom: 20px;
+
+				img {
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		.dropdown-start {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 14px;
+			transition: margin ease-in-out 1s;
+
+			&-text {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 16px;
+				font-family: v.$ff;
+				font-weight: v.$fw-500;
+				font-size: 16px;
+				line-height: v.$lh130;
+				color: v.$c-black;
+
+				img {
+					flex-shrink: 0;
+					width: 20px;
+					height: 9px;
+					transition: transform ease-in-out v.$tr;
+				}
+			}
+
+			&-subtext {
+				width: 100%;
+				font-family: v.$ff;
+				font-weight: v.$fw-300;
+				font-size: 12px;
+				line-height: v.$lh150;
+				color: v.$c-black;
+				margin-top: 20px;
+			}
+		}
+
+		.dropdown-radios {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+		}
+	}
+
+	.aside-actions {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 10px;
+
+		button {
+			width: 100%;
+		}
+	}
+}
