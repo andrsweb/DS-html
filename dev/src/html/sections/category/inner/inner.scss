@@ -239,6 +239,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 20px;
+		padding-bottom: 80px;
 
 		@media(min-width: v.$md) {
 			gap: 40px;
