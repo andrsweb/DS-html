@@ -2,7 +2,7 @@ import './modal';
 import { initTabsSliders } from '../tabsSlider.js';
 import { initProductCards } from './productCard.js';
 import { initGiftModal } from '../giftModal.js';
-
+import { Fancybox } from '@fancyapps/ui/dist/fancybox/';
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -183,3 +183,5 @@ const initPromoCopy = () => {
 		});
 	});
 }
+
+Fancybox.bind('[data-fancybox]', {});

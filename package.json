@@ -40,6 +40,7 @@
     "w3c-html-validator": "^2.0.2"
   },
   "dependencies": {
+    "@fancyapps/ui": "^6.1.7",
     "body-scroll-lock": "^3.1.5",
     "nouislider": "^15.8.1",
     "swiper": "^11.2.10"
