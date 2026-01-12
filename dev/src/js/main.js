@@ -12,3 +12,4 @@ import './sort';
 import './readMore';
 import './filters';
 import './mobileFilter';
+import './thumbs-slider';
