@@ -6,19 +6,21 @@
         <div class="card-info">
             <div class="card-info-top">
                 <div class="card-labels">
-                     <span class="color-label red">
-                    Рекомендуем
-                </span>
+                    <span class="color-label red">
+                        Рекомендуем
+                    </span>
                     <span class="color-label blue">
-                    ТОП
-                </span>
+                        ТОП
+                    </span>
                 </div>
                 <div class="card-rate">
                     <img src="/img/star.svg" width="23" height="23" alt="Векторная звезда рейтинга">
                     <span>4.8/5</span>
                 </div>
             </div>
-            <div class="card-desc">
+            <form class="card-desc">
+                <input type="hidden" name="seeds_count" value="1">
+                <input type="hidden" name="quantity" value="1">
                 <div class="card-title">
                     <h4>
                         <em>Moonshine Cookies fem,</em>Dutch Bulk
@@ -73,17 +75,17 @@
                     </span>
                 </div>
                 <div class="card-nums">
-                    <button class="button borderless square active">1</button>
-                    <button class="button borderless square">2</button>
-                    <button class="button borderless square">3</button>
+                    <button class="button borderless square active" type="button">1</button>
+                    <button class="button borderless square" type="button">2</button>
+                    <button class="button borderless square" type="button">3</button>
                 </div>
                 <div class="card-bottom">
                     @@include('components/actions/counter/counter.html', {"size": "lg"})
-                    <button class="button filled add">
+                    <button class="button filled add" type="submit">
                         Корзина
                     </button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>
