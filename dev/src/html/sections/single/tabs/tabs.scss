@@ -1,0 +1,75 @@
+@use '../../../../scss/vars/vars' as v;
+
+.single-tabs {
+
+	&-buttons {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+		margin-bottom: 20px;
+
+		@media(min-width: v.$md) {
+			margin-bottom: 40px;
+			gap: 24px;
+		}
+	}
+
+	&-content {
+
+	}
+
+	&-texts {
+		width: 100%;
+		max-width: 640px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+
+		@media(min-width: v.$md) {
+			gap: 20px;
+		}
+	}
+
+	&-text {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 14px;
+
+		@media(min-width: v.$md) {
+			gap: 16px;
+		}
+
+		h3 {
+			font-family: v.$ff;
+			font-weight: v.$fw-700;
+			line-height: v.$lh150;
+			font-size: 16px;
+			color: v.$c-black;
+
+			@media(min-width: v.$md) {
+				font-size: 20px;
+			}
+		}
+
+		p {
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			line-height: v.$lh150;
+			font-size: 14px;
+			color: v.$c-gray;
+
+			@media(min-width: v.$md) {
+				font-size: 16px;
+			}
+
+			em {
+				font-weight: v.$fw-500;
+				font-style: normal;
+				color: v.$c-accent;
+			}
+		}
+	}
+}
