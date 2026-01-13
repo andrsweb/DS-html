@@ -1,0 +1,31 @@
+<div class="similar cards-slider">
+    <div class="cards-slider-actions">
+        <h3>Похожие товары</h3>
+        <div class="slider-actions-buttons">
+            <div class="swiper-navigation">
+                <button class="swiper-prev">
+                    <img src="/img/slide-arrow.svg" width="20" height="20" alt="Векторная стрелка">
+                </button>
+                <button class="swiper-next">
+                    <img src="/img/slide-arrow.svg" width="20" height="20" alt="Векторная стрелка">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="swiper swiper-cards">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                @@include('components/card/card.html', {"src": "/img/ca1.jpg"})
+            </div>
+            <div class="swiper-slide">
+                @@include('components/card/card.html', {"src": "/img/ca2.jpg"})
+            </div>
+            <div class="swiper-slide">
+                @@include('components/card/card.html', {"src": "/img/ca3.jpg"})
+            </div>
+            <div class="swiper-slide">
+                @@include('components/card/card.html', {"src": "/img/ca1.jpg"})
+            </div>
+        </div>
+    </div>
+</div>

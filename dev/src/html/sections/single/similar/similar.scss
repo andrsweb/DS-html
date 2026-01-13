@@ -1,0 +1,77 @@
+@use '../../../../scss/vars/vars' as v;
+
+.similar {
+	width: 100%;
+	padding: 40px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	@media(min-width: v.$md) {
+		padding: 100px 0;
+	}
+
+	h3 {
+		font-family: v.$ff;
+		font-weight: v.$fw-500;
+		font-size: 20px;
+		color: v.$c-black;
+
+		@media(min-width: v.$md) {
+			font-size: 36px;
+		}
+	}
+
+	.swiper {
+		width: 100%;
+	}
+
+	&-cards {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: stretch;
+		gap: 20px;
+
+		@media(min-width: v.$md) {
+			gap: 33px;
+		}
+
+		.card {
+			width: 100%;
+
+			@media(min-width: v.$sm) {
+				width: calc(100% / 2 - 10px);
+			}
+
+			@media(min-width: v.$md) {
+				width: calc(100% / 2 - 17px);
+			}
+
+			@media(min-width: v.$lg) {
+				width: calc(100% / 4 - 25px);
+			}
+		}
+	}
+
+	.cards-slider-actions {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 16px;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		.slider-actions-buttons {
+			width: auto;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+		}
+
+		.swiper-navigation {
+			width: auto;
+		}
+	}
+}
