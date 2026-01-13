@@ -1,5 +1,6 @@
 import './modal';
 import { initTabsSliders } from '../tabsSlider.js';
+import { initTabs } from '../tabs.js';
 import { initProductCards } from './productCard.js';
 import { initGiftModal } from '../giftModal.js';
 import { Fancybox } from '@fancyapps/ui/dist/fancybox/';
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	initBurgerMenu();
 	initLanguageSwitcher();
 	initTabsSliders();
+	initTabs();
 	initProductCards();
 	initPromoCopy();
 	initGiftModal();
