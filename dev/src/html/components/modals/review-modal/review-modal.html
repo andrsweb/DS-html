@@ -1,0 +1,61 @@
+<div class="modal-wrapper review-modal" data-modal-id="review">
+    <div class="modal">
+        <button class="modal-close" data-modal-close>
+            <span></span>
+        </button>
+        <div class="modal-top">
+            <h3>Оставить отзыв</h3>
+        </div>
+        <form class="review-form" id="review-form">
+            <div class="form-groups">
+                <div class="form-group">
+                    <label for="review-name">Имя <span>*</span></label>
+                    <input type="text" id="review-name" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div class="form-group">
+                    <label>Оценка <span>*</span></label>
+                    <div class="star-rating" data-rating="0">
+                        <button type="button" class="star-btn" data-value="1">
+                            @@include('sections/single/tabs/star.html', {"fill": "#EDEDED"})
+                        </button>
+                        <button type="button" class="star-btn" data-value="2">
+                            @@include('sections/single/tabs/star.html', {"fill": "#EDEDED"})
+                        </button>
+                        <button type="button" class="star-btn" data-value="3">
+                            @@include('sections/single/tabs/star.html', {"fill": "#EDEDED"})
+                        </button>
+                        <button type="button" class="star-btn" data-value="4">
+                            @@include('sections/single/tabs/star.html', {"fill": "#EDEDED"})
+                        </button>
+                        <button type="button" class="star-btn" data-value="5">
+                            @@include('sections/single/tabs/star.html', {"fill": "#EDEDED"})
+                        </button>
+                    </div>
+                    <input type="hidden" name="rating" id="review-rating" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="review-text">Отзыв</label>
+                <textarea id="review-text" name="review" placeholder="Оставьте свой отзыв" rows="5"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class="file-upload">
+                    <input type="file" id="review-images" name="images"
+                        accept="image/jpeg,image/jpg,image/png,image/webp" multiple hidden>
+                    <span class="file-upload-trigger">
+                        <span class="file-upload-preview"></span>
+                        <span class="file-upload-add">
+                            <span class="plus"></span>
+                        </span>
+                    </span>
+                </label>
+            </div>
+
+            <button type="submit" class="button borderless active">
+                Отправить
+            </button>
+        </form>
+    </div>
+</div>
