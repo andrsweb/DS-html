@@ -1,0 +1,14 @@
+@use '../../../../scss/vars/vars' as v;
+
+.delivery {
+	width: 100%;
+	padding-bottom: 40px;
+
+	@media(min-width: v.$xl) {
+		padding-bottom: 100px;
+	}
+
+	&-wrapper {
+		width: 100%;
+	}
+}
