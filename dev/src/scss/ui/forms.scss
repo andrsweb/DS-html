@@ -169,11 +169,11 @@
 		font-weight: v.$fw-300;
 	}
 
-	&:has(input[type="radio"]:checked)::after {
+	&:has(input[type="radio"]:checked)::after, &:has(input[type="checkbox"]:checked)::after {
 		opacity: 1;
 	}
 
-	input[type="radio"] {
+	input[type="radio"], input[type="checkbox"] {
 		display: none;
 		position: absolute;
 		visibility: hidden;
