@@ -50,3 +50,25 @@
 .swiper-button-lock {
 	display: none;
 }
+
+.swiper {
+	&-pagination {
+		bottom: 15px;
+
+		@media(min-width: v.$xl) {
+			display: none;
+		}
+
+		&-bullet {
+			width: 24px;
+			height: 6px;
+			border-radius: v.$br4;
+			background-color: v.$c-gray-m;
+			opacity: 1;
+
+			&-active {
+				background-color: #F9C50F;
+			}
+		}
+	}
+}

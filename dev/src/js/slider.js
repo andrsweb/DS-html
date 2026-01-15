@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
@@ -14,7 +14,7 @@ const initCardSliders = (selector) => {
         const container = swiper.parentElement;
 
         new Swiper(swiper, {
-            modules: [Navigation],
+            modules: [Navigation, Pagination],
             slidesPerView: 1,
             spaceBetween: 20,
             navigation: {
@@ -26,6 +26,9 @@ const initCardSliders = (selector) => {
                 768: { slidesPerView: 3, spaceBetween: 24 },
                 1200: { slidesPerView: 4, spaceBetween: 35 },
             },
+			pagination: {
+				el: container.querySelector('.swiper-pagination'),
+			}
         });
     });
 };
