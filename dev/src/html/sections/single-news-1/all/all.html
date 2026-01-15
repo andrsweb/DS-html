@@ -1,0 +1,32 @@
+<div class="similar cards-slider">
+    <div class="cards-slider-actions">
+        <h3>Похожие товары</h3>
+        <div class="slider-actions-buttons">
+            <div class="swiper-navigation">
+                <a href="#" class="v-more">Все новости</a>
+                <button class="swiper-prev">
+                    <img src="/img/slide-arrow.svg" width="20" height="20" alt="Векторная стрелка">
+                </button>
+                <button class="swiper-next">
+                    <img src="/img/slide-arrow.svg" width="20" height="20" alt="Векторная стрелка">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="swiper swiper-cards">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                @@include('components/news-card/news-card.html', {"color": "orange", "label": "новинки"})
+            </div>
+            <div class="swiper-slide">
+                @@include('components/news-card/news-card.html', {"color": "orange", "label": "новинки"})
+            </div>
+            <div class="swiper-slide">
+                @@include('components/news-card/news-card.html', {"color": "orange", "label": "новинки"})
+            </div>
+            <div class="swiper-slide">
+                @@include('components/news-card/news-card.html', {"color": "orange", "label": "новинки"})
+            </div>
+        </div>
+    </div>
+</div>
