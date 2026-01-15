@@ -11,7 +11,7 @@
 		padding: 100px 0;
 	}
 
-	h3 {
+	.h3 {
 		font-family: v.$ff;
 		font-weight: v.$fw-500;
 		font-size: 20px;
@@ -72,6 +72,8 @@
 
 		.swiper-navigation {
 			width: auto;
+			display: flex;
+			align-items: center;
 		}
 	}
 }
