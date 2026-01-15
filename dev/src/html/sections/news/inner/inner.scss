@@ -1,0 +1,64 @@
+@use '../../../../scss/vars/vars' as v;
+
+.news {
+	width: 100%;
+
+	&-inner {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 30px;
+	}
+
+	&-links {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 10px;
+
+		@media(min-width: v.$md) {
+			gap: 16px;
+		}
+	}
+
+	&-box {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+
+		@media(min-width: v.$md) {
+			gap: 40px;
+		}
+
+		h2 {
+			font-family: v.$ff;
+			font-weight: v.$fw-500;
+			line-height: v.$lh120;
+			color: v.$c-black;
+			font-size: 20px;
+
+			@media(min-width: v.$md) {
+				font-size: 36px;
+			}
+		}
+	}
+
+	&-cards {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		gap: 32px;
+	}
+
+	.link-wrapper {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
