@@ -1,0 +1,166 @@
+@use '../../../../scss/vars/vars' as v;
+
+.single-news {
+	&-top {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+
+		@media(min-width: v.$xl) {
+			gap: 58px;
+			flex-direction: row;
+		}
+
+		&-left {
+			width: 100%;
+			max-width: 613px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			flex-shrink: 0;
+		}
+
+		&-right {
+			display: none;
+			width: 100%;
+			max-width: 769px;
+
+			@media(min-width: v.$xl) {
+				display: block;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&-img-mob {
+		width: 100%;
+		margin-bottom: 20px;
+
+		img {
+			width: 100%;
+			height: 210px;
+			object-fit: cover;
+		}
+
+		@media(min-width: v.$xl) {
+			display: none;
+		}
+	}
+
+	&-title {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+		margin-bottom: 30px;
+
+		@media(min-width: v.$md) {
+			gap: 40px;
+		}
+
+		h2 {
+			font-family: v.$ff;
+			font-weight: v.$fw-600;
+			font-size: 20px;
+			line-height: v.$lh130;
+			color: v.$c-black;
+
+			@media(min-width: v.$md) {
+				font-size: 36px;
+			}
+		}
+	}
+
+	&-items {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 6px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid v.$c-gray-m;
+
+		@media(min-width: v.$md) {
+			gap: 8px;
+		}
+
+		.separator {
+			display: block;
+			width: 4px;
+			height: 4px;
+			border-radius: 50%;
+			background-color: v.$c-gray;
+		}
+	}
+
+	&-item {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+
+		img {
+			width: 14px;
+			height: 14px;
+			aspect-ratio: 1;
+		}
+
+		span {
+			font-family: v.$ff;
+			font-weight: v.$fw-300;
+			font-size: 14px;
+			color: v.$c-gray;
+		}
+	}
+
+	&-content {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 20px;
+
+		p {
+			font-family: v.$ff;
+			font-weight: v.$fw-400;
+			font-size: 14px;
+			color: v.$c-gray;
+
+			@media(min-width: v.$md) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	&-actions {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 16px;
+		margin-top: 20px;
+
+		@media(min-width: v.$md) {
+			margin-top: 40px;
+		}
+	}
+
+	&-bottom {
+		width: 100%;
+
+		.swiper {
+			.swiper-slide {
+				.news-card {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
