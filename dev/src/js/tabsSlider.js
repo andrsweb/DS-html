@@ -9,27 +9,27 @@ class TabsSlider {
         this.navigationNext = container.querySelector('.swiper-next');
         this.swipers = new Map();
         this.currentActiveTab = null;
-        
+
         this.init();
     }
-    
+
     init() {
         this.findActiveTab();
         this.initSwipers();
         this.bindEvents();
         this.bindNavigation();
     }
-    
+
     findActiveTab() {
         const activeButton = this.container.querySelector('.tab-buttons button.active');
         this.currentActiveTab = activeButton ? activeButton.dataset.tab : 'autoflowering';
     }
-    
+
     initSwipers() {
         this.tabContents.forEach(tabContent => {
             const tabName = tabContent.dataset.tab;
             const swiperEl = tabContent.querySelector('.swiper-cards');
-            
+
             if (swiperEl) {
                 const swiper = new Swiper(swiperEl, {
                     slidesPerView: 1,
@@ -43,22 +43,22 @@ class TabsSlider {
                             slidesPerView: 3,
                             spaceBetween: 24,
                         },
-                        1024: {
+                        1200: {
                             slidesPerView: 3,
                             spaceBetween: 35,
                         },
                     },
                 });
-                
+
                 this.swipers.set(tabName, swiper);
-                
+
                 if (tabName !== this.currentActiveTab) {
                     swiper.disable();
                 }
             }
         });
     }
-    
+
     bindEvents() {
         this.tabButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -69,7 +69,7 @@ class TabsSlider {
             });
         });
     }
-    
+
     bindNavigation() {
         if (this.navigationPrev) {
             this.navigationPrev.addEventListener('click', () => {
@@ -79,7 +79,7 @@ class TabsSlider {
                 }
             });
         }
-        
+
         if (this.navigationNext) {
             this.navigationNext.addEventListener('click', () => {
                 const activeSwiper = this.swipers.get(this.currentActiveTab);
@@ -89,39 +89,39 @@ class TabsSlider {
             });
         }
     }
-    
+
     switchTab(targetTab) {
         const activeButton = this.container.querySelector('.tab-buttons button.active');
         const activeContent = this.container.querySelector('.tab-content.active');
         const targetButton = this.container.querySelector(`.tab-buttons button[data-tab="${targetTab}"]`);
         const targetContent = this.container.querySelector(`.tab-content[data-tab="${targetTab}"]`);
-        
+
         if (!targetButton || !targetContent || targetTab === this.currentActiveTab) return;
-        
+
         activeButton?.classList.remove('active');
         activeContent?.classList.remove('active');
-        
+
         targetButton.classList.add('active');
         targetContent.classList.add('active');
-        
+
         this.updateSwipers(this.currentActiveTab, targetTab);
         this.currentActiveTab = targetTab;
     }
-    
+
     updateSwipers(oldTab, newTab) {
         const oldSwiper = this.swipers.get(oldTab);
         const newSwiper = this.swipers.get(newTab);
-        
+
         if (oldSwiper) {
             oldSwiper.disable();
         }
-        
+
         if (newSwiper) {
             newSwiper.enable();
             newSwiper.update();
         }
     }
-    
+
     destroy() {
         this.swipers.forEach(swiper => swiper.destroy());
         this.swipers.clear();
@@ -131,11 +131,11 @@ class TabsSlider {
 const initTabsSliders = () => {
     const sliders = document.querySelectorAll('.cards-slider');
     const instances = [];
-    
+
     sliders.forEach(slider => {
         instances.push(new TabsSlider(slider));
     });
-    
+
     return instances;
 };
 

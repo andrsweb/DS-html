@@ -4,7 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
-    initCardSliders('.swiper-cards');
+    initCardSliders('.swiper-default');
 });
 
 const initCardSliders = (selector) => {
@@ -26,9 +26,9 @@ const initCardSliders = (selector) => {
                 768: { slidesPerView: 3, spaceBetween: 24 },
                 1200: { slidesPerView: 4, spaceBetween: 35 },
             },
-			pagination: {
-				el: container.querySelector('.swiper-pagination'),
-			}
+            pagination: {
+                el: container.querySelector('.swiper-pagination'),
+            }
         });
     });
 };
