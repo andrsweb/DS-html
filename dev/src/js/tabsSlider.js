@@ -35,6 +35,7 @@ class TabsSlider {
                     slidesPerView: 1,
                     spaceBetween: 20,
 					autoHeight: true,
+					loop: true,
                     breakpoints: {
                         480: {
                             slidesPerView: 2,
