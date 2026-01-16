@@ -193,5 +193,11 @@
 	.swiper-cards {
 		width: 100%;
 		overflow: hidden;
+
+		.swiper-slide {
+			display: flex;
+			flex-direction: column;
+			height: 100%;
+		}
 	}
 }

@@ -34,7 +34,6 @@ class TabsSlider {
                 const swiper = new Swiper(swiperEl, {
                     slidesPerView: 1,
                     spaceBetween: 20,
-					autoHeight: true,
 					loop: true,
                     breakpoints: {
                         480: {
@@ -46,7 +45,7 @@ class TabsSlider {
                             spaceBetween: 24,
                         },
                         1200: {
-                            slidesPerView: 3,
+							slidesPerView: 3,
                             spaceBetween: 35,
                         },
                     },
