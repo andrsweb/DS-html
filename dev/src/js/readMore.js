@@ -7,7 +7,7 @@ const initReadMore = () => {
     const LIMIT = 350;
 
     containers.forEach(container => {
-        const textEl = container.querySelector('p');
+        const textEl = container.querySelector('.category-title-info div');
         const button = container.querySelector('.read-more');
 
         if (!textEl || !button) return;

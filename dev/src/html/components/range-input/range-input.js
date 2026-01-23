@@ -47,6 +47,7 @@ const initRangeInputs = () => {
 
 		wrapper.noUiSlider.on('update', (values, handle) => {
 			const value = Math.round(parseFloat(values[handle]));
+
 			if (handle === 0) {
 				inputMin.value = value + unit;
 			} else {
@@ -56,6 +57,8 @@ const initRangeInputs = () => {
 
 		wrapper.noUiSlider.on('change', (values) => {
 			localStorage.setItem(`range-${id}`, JSON.stringify(values.map(v => parseFloat(v))));
+			const event = new Event('change');
+			inputMax.dispatchEvent(event);
 		});
 
 		if (resetBtn) {
