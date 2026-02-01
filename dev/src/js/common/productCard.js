@@ -17,7 +17,7 @@ class ProductCard {
             new: parseInt(card.dataset.priceNew) || (this.newPrice ? parseInt(this.newPrice.textContent.replace(/\D/g, '')) : 0)
         };
 
-        this.pricePerSeed = { ...this.unitPrice };
+        this.pricePerSeed = {...this.unitPrice};
 
         this.isSingleInfo = card.classList.contains('single-info');
         this.currentSeeds = 1;
@@ -33,7 +33,8 @@ class ProductCard {
 
     bindEvents() {
         this.numButtons.forEach(button => {
-            button.addEventListener('click', () => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
                 const text = button.querySelector('.quantity-x')?.textContent || button.textContent;
                 const seeds = parseInt(text.replace(/\D/g, ''));
                 this.switchSeedsCount(seeds, button);
@@ -149,4 +150,4 @@ const initProductCards = () => {
     return instances;
 };
 
-export { ProductCard, initProductCards };
+export {ProductCard, initProductCards};

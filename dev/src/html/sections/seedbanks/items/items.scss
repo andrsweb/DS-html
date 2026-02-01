@@ -82,10 +82,11 @@
 		}
 
 		@include g.hover {
-			background-color: v.$c-accent;
+			opacity: .6;
+			//background-color: v.$c-accent;
 
 			p {
-				color: v.$c-white;
+				//color: v.$c-white;
 			}
 		}
 	}

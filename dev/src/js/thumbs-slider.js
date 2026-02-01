@@ -36,6 +36,7 @@ const initSwiperThumbs = () => {
 		modules: [Navigation, Thumbs, Pagination],
 		slidesPerView: 1,
 		spaceBetween: 16,
+		loop: true,
 		navigation: {
 			nextEl: '.swiper-next',
 			prevEl: '.swiper-prev',

@@ -14,4 +14,5 @@ import './filters';
 import './mobileFilter';
 import './thumbs-slider';
 import './slider';
+import './product';
 import '../html/components/modals/review-modal/review-modal';
